@@ -17,7 +17,7 @@ export class App extends Component{
   }
 
   componentDidMount(){
-    fetch("http://localhost:5000/getData")
+    fetch("/getData")
         .then(res => res.text())
         .then(res => console.log(res));
   }
