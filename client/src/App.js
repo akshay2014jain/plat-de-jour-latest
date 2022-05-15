@@ -18,8 +18,8 @@ export class App extends Component{
 
   componentDidMount(){
     fetch("/getData")
-        .then(res => res.text())
-        .then(res => console.log(res));
+        .then(res => res.json())
+        .then(res => console.log(res.body));
   }
 
 
