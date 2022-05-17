@@ -24,7 +24,7 @@ app.get('/getData', (req,res) => {
 
 app.post('/predict', (req, res) => {
     jsonData = req.body
-    request.post({url: 'http://192.168.86.158:3001/predict', json:jsonData}, function (error, response) {
+    request.post({url: 'https://lit-fjord-92060.herokuapp.com/predict', json:jsonData}, function (error, response) {
         if (!error && response.statusCode == 200) {
             res.json(response);
         }
