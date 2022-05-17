@@ -1,10 +1,8 @@
 const express = require('express');
 const request = require('request');
-const base64 = require('base-64');
 const bodyParser = require('body-parser')
 const path = require('path');
 const cors = require('cors');
-const { json, response } = require('express');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json({limit: '50mb'}));

@@ -9,6 +9,7 @@ export class App extends Component{
   imageHandler = (e) => {
     const reader = new FileReader();
     reader.onload = () => {
+      console.log('Loading Result')
       if(reader.readyState === 2){
         let img = e.target.files[0];
         this.setState({profileImg: reader.result })
@@ -20,7 +21,7 @@ export class App extends Component{
 
         fetch("/predict", requestOptions)
           .then(response => response.json())
-          .then(response => console.log(response));
+          .then(response => console.log(response.body));
       }
     }
     reader.readAsDataURL(e.target.files[0])
