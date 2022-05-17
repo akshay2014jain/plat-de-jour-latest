@@ -5,12 +5,22 @@ export class App extends Component{
   state = {
     profileImg: 'https://images.creativetemplate.net/wp-content/uploads/2018/02/Blank-Menu-Design-Template.png'
   }
+
   imageHandler = (e) => {
     const reader = new FileReader();
     reader.onload = () => {
       if(reader.readyState === 2){
+        let img = e.target.files[0];
         this.setState({profileImg: reader.result })
-        
+        const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ image: img.name})
+        };
+
+        fetch("/predict", requestOptions)
+          .then(response => response.json())
+          .then(response => console.log(response));
       }
     }
     reader.readAsDataURL(e.target.files[0])
