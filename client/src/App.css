@@ -1,68 +1,50 @@
-*{
-  margin: 0;
-  padding: 0;
-}
-.page{
+.App {
+  background-color:white;
   height: 100vh;
-  background-color: gray;
-  display: flex ;
-  align-items: center ;
-  justify-content: center ;
+  font-family: sans-serif;
+  
 }
-
-.container{
-height: 600px ;
-width: 600px ;
-border-radius: 10px;
-background-color: whitesmoke;
-}
-
-.heading {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-.img-holder{
-  margin:auto;
-  width: 300px;
-  height: 300px;
-  border: 3px solid black;
-  border-radius: 5px;
-  margin-top: 1rem;
-}
-.img{
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-}
-
-#input[type="file"]{
-  display: None;
-}
-
-.label{
-  width: 100% ;
-  margin-top: 1rem;
+.heading1{
   display: flex;
-  justify-content: center;
+  font-size: 40px;
+  font-family: fantasy;
+}
+.photo {
+  height: 100px;
+  width: 140px; 
+  border: white;
+  flex-direction: column;
+  display: flex;
+
 }
 
-.image-upload{
-  margin:auto;
-  width: 250px;
-  height: 40px;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.buttontemp{
+  text-align: center;
+}
+
+.button2{
   background-color: black;
   color: white;
-  border-radius: 10px;
-  text-align: center;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
   cursor: pointer;
+  font-family : cursive;
+  text-align: center;
 }
-.button {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }

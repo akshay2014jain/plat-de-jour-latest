@@ -1,60 +1,60 @@
-import React , {Component } from 'react'
-import './App.css'
+import './App.css';
 
-export class App extends Component{
-  state = {
-    profileImg: 'https://images.creativetemplate.net/wp-content/uploads/2018/02/Blank-Menu-Design-Template.png'
-  }
+import Card  from './component/Card';
+import Book from './component/Book';
+import {Component} from "react";
+import styled from "styled-components";
+import {Helmet} from "react-helmet";
 
-  imageHandler = (e) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      console.log('Loading Result')
-      if(reader.readyState === 2){
-        let img = e.target.files[0];
-        this.setState({profileImg: reader.result })
-        const requestOptions = {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ image: img.name})
-        };
+const Button = styled.button`
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  visibility = "hidden";
+  font-family : cursive;
+`;
 
-        fetch("/predict", requestOptions)
-          .then(response => response.json())
-          .then(response => console.log(response.body));
-      }
+export default class App extends Component{
+
+  constructor(props){
+    super(props)
+    this.state = {
+      active: 'card',
+      image: ''
     }
-    reader.readAsDataURL(e.target.files[0])
   }
 
-  componentDidMount(){
-    fetch("/getData")
-        .then(res => res.json())
-        .then(res => console.log(res.body));
+  setActive(){
+    this.setState({active: 'book'});
   }
-
 
   render(){
-    const {profileImg} = this.state
     return (
-      <div className="page">
-        <div className="container">
-          <h1 className="heading"> One Food Stop Application </h1>
-            <h2 className="heading" > Upload your food picture </h2>
-          <div className="img-holder" >
-            <img src={profileImg} alt ="" id="img" className="img"/>
-          </div>
-          <input type = "file" name = "image-upload" id = "input" accept = "image/*" onChange={this.imageHandler}/>
-          <div className="label" >
-            <label htmlFor="input" className="image-upload">
-              <i className="material-icons"> add_photo_alternate </i>
-              Choose your food photo
-            </label>
-          </div>
-        </div> 
+      <div className="App">
+        <Helmet>
+          <meta charSet = "utf-8" />
+          <title> Plat De Joûr</title>
+        </Helmet>
+        <h1 className="heading1">
+        <img className="photo" src= { require('./logo.png')} alt="Plat de Jour" />
+          Plat De Joûr 
+          </h1>
+        <div>
+          {this.state.active === 'card' && <Card setState={state => this.setState(state)} /> }
+          {this.state.active === "card" && <div>
+          {<nav className="buttontemp">
+            <Button onClick = {() => this.setActive()} >
+              Know Your Food!
+            </Button> 
+          </nav>}
+        </div>}
+        {this.state.active === "book" && <Book {...this.state}/>}
+        </div>
       </div>
-      
-    )
+    );
   }
 }
-export default App

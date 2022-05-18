@@ -20,6 +20,15 @@ app.get('/getData', (req,res) => {
     console.log('Connected to Server!');
 });
 
+app.post('/getMealDb', (req, res) => {
+    parameter = req.body.s
+    request('https://www.themealdb.com/api/json/v1/1/search.php?s='+parameter, function (error, response) {
+        if (!error && response.statusCode == 200) {
+            res.json(response);
+        }
+    })
+});
+
 app.post('/predict', (req, res) => {
     jsonData = req.body
     request.post({url: 'https://lit-fjord-92060.herokuapp.com/predict', json:jsonData}, function (error, response) {
