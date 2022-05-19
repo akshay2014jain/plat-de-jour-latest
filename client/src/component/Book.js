@@ -17,7 +17,7 @@ export class Book extends Component{
   constructor(props){
     super(props)
     this.state = {
-      foodItem: this.props.image,
+      foodItem: this.props.foodImage,
       showRecipe: 'No Show',
       recipe: ''
     }

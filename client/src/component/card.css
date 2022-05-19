@@ -1,7 +1,203 @@
-*{
+.cardheader {
+  display: flex;
+  flex-direction: row;
+}
+.cardheader-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0rem 2.5rem;
+}
+
+.label{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-family);
+  background-color:#1e436d;
+  padding: 2rem 6rem;
+  align-items: center;
+  padding: 2rem 6rem;
+}
+
+.image-upload{
+  margin:auto;
+  width: 250px;
+  height: 40px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--font-family);
+  background-color: #FF4820;
+  color: white;
+  border-radius: 5px;
+  padding: 1px 6px;
+  margin: 10px 0px;
+  
+}
+
+.cardheader-content h1 {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 62px;
+  line-height: 75px;
+  letter-spacing: -0.04em;
+}
+
+.cardheader-content p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--color-text);
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.cardheader-content__input {
+  width: 50%;
+  height : 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #FF4820;
+  padding: 2rem 6rem;
+}
+
+.cardheader-content__input input {
+  flex: 2;
+  width: 100%;
+  min-height: 50px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  background: var(--color-footer);
+  border: 2px solid var(--color-footer);
+  padding: 0 1rem;
+  outline: none;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.cardheader-content__input button {
+  flex: 1;
+  width: 100%;
+  min-height: 50px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  background: #FF4820;
+  border: 2px solid #FF4820;
+  padding: 0 1rem;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.cardheader-content__people {
+  width: 450px;
+  height: 450px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+
+.cardheader-content__people img {
+  width: 80%;
+  height: 80%;
+  display: flex;
+}
+
+.cardheader-content__people p {
+  margin: 0 0 0 1rem;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 38px;
+  color: #fff;
+  text-align: center;
+  display: flex;
+}
+
+.cardheader-image {
+  flex: 1;
+  width: 80%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardheader-image img {
+  width: 20%;
+  height: 20%;
+}
+
+@media screen and (max-width: 1050px) {
+  .cardheader {
+      flex-direction: column;
+  }
+
+  .cardheader-content {
+      margin: 0 0 3rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .cardheader-content h1 {
+      font-size: 48px;
+      line-height: 60px;
+  }
+
+  .cardheader-content p {
+      font-size: 16px;
+      line-height: 24px;
+  }
+  
+  .cardheader-content__people {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .cardheader-content__people p {
+      display: flex;
+      margin: 0;
+  }
+
+  .cardheader-content__input input,
+  .cardheader-content__input button {
+      font-size: 16px;
+      line-height: 24px;
+  }
+}
+@media screen and (max-width: 490px) {
+  .cardheader-content h1 {
+      font-size: 36px;
+      line-height: 48px;
+  }
+  .cardheader-content p {
+      font-size: 14px;
+      line-height: 24px;
+  }
+  .cardheader-content__input input,
+  .cardheader-content__input button {
+      font-size: 12px;
+      line-height: 16px;
+  }
+}
+/* *{
     margin: 0;
     padding: 0;
   }
+
   .page{
     height: 65vh;
     background-color: white;
@@ -38,7 +234,7 @@
     width: 300px;
     height: 300px;
     object-fit: cover;
-  }
+  }cardheader-content__people
   
   #input[type="file"]{
     display: None;
@@ -65,4 +261,4 @@
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-  }
+  } */

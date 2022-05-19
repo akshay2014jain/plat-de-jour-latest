@@ -1,13 +1,17 @@
 import './App.css';
-
+import './index.css';
 import Card  from './component/Card';
-import Book from './component/Book';
 import {Component} from "react";
 import styled from "styled-components";
 import {Helmet} from "react-helmet";
+import Navbar from './component/Navbar';
+import Header from './component/Header';
+import Feature from './component/feature';
+import Footer from './component/footer';
+import Result from './component/Result';
 
 const Button = styled.button`
-  background-color: black;
+  background-color: #FF4820;
   color: white;
   font-size: 20px;
   padding: 10px 60px;
@@ -15,7 +19,7 @@ const Button = styled.button`
   margin: 10px 0px;
   cursor: pointer;
   visibility = "hidden";
-  font-family : cursive;
+  font-family : var(--font-family);
 `;
 
 export default class App extends Component{
@@ -23,13 +27,19 @@ export default class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      active: 'card',
+      active: 'true',
       image: ''
     }
   }
 
-  setActive(){
-    this.setState({active: 'book'});
+  componentDidMount(){
+    fetch("/getData")
+      .then(response => response.json())
+      .then(response => console.log(response.body))
+  }
+
+  setActive(activeStatus){
+    this.setState({active: activeStatus});
   }
 
   render(){
@@ -39,21 +49,25 @@ export default class App extends Component{
           <meta charSet = "utf-8" />
           <title> Plat De Joûr</title>
         </Helmet>
-        <h1 className="heading1">
-        <img className="photo" src= { require('./logo.png')} alt="Plat de Jour" />
-          Plat De Joûr 
-          </h1>
-        <div>
-          {this.state.active === 'card' && <Card setState={state => this.setState(state)} /> }
-          {this.state.active === "card" && <div>
-          {<nav className="buttontemp">
-            <Button onClick = {() => this.setActive()} >
-              Know Your Food!
-            </Button> 
-          </nav>}
-        </div>}
-        {this.state.active === "book" && <Book {...this.state}/>}
+        <div className="gradient__bg">
+          <Navbar/>
+          {this.state.active === 'true' && <Header/>}
+          {this.state.active === 'true' && <Feature/>}
         </div>
+        <div>
+          <Card setState={state => this.setState(state)}/> 
+          {this.state.active === 'true' && 
+            <div>
+              <nav className="buttontemp">
+                <Button onClick = {() => this.setActive('false') } >
+                  Know Your Food!
+                </Button> 
+              </nav> 
+            </div>
+          }
+          {this.state.active === 'false' && <Result {...this.state}/>}
+        </div>
+        <Footer/>
       </div>
     );
   }

@@ -1,13 +1,13 @@
 import React , {Component} from 'react'
-import menu from '../menu.png'
 import './card.css';
+import startImage from './try.jpeg';
 
 export class Card extends Component{
 
   constructor(props){
     super(props)
     this.state = {
-      profileImg: menu
+      profileImg: startImage
     }
   }
 
@@ -39,20 +39,23 @@ export class Card extends Component{
   render(){
     const {profileImg} = this.state;
     return (
-      <div className="page">
-        <div className="container">
-          <h1 className="heading"> What's for Dinner?  </h1>
-            <h2 className="heading" > Upload your food picture </h2>
-          <div className="img-holder" >
-            <img src={profileImg} alt ="" id="img" className="img"/>
-          </div>
-          <input type = "file" name = "image-upload" id = "input" accept = "image/*" onChange={this.imageHandler}/>
-          <div className="label" >
-            <label htmlFor="input" className="image-upload">
-              <i className="material-icons"> add_photo_alternate </i>
-              Choose your food photo
-            </label>
-          </div>
+      <div className="cardheader" id="start">
+      <div className="cardheader-content">
+      <h1 className="gradient__text">What's Cooking?</h1>
+        <p>Upload the picture </p>
+        <p>& let us find the perfect recipe for you</p>
+        </div>
+      <div className="cardheader-content__people">
+        <img src= {profileImg} alt="profile"/>
+      </div>
+      <input style = {{display:'none'}} type = "file" name = "image-upload" id = "input" accept = "image/*" onChange={this.imageHandler}/>
+      <div className="cardheader-content" >
+        <label htmlFor="input" className="image-upload">
+            <i className="material-icons"> add_photo_alternate </i>
+              Choose your food photo 
+        </label>
+      </div>
+      <div>
       </div>
     </div>
     )
