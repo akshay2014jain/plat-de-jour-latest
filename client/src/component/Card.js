@@ -17,12 +17,12 @@ export class Card extends Component{
     reader.onload = () => {
       console.log('Loading Result')
       if(reader.readyState === 2){
-        let img = e.target.files[0];
+        let image = reader.result.split(",")[1]
         this.setState({profileImg: reader.result })
         const requestOptions = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ image: img.name})
+          body: JSON.stringify({ image: image})
         };
 
         fetch("/predict", requestOptions)
