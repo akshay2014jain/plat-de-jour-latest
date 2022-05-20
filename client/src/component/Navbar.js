@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="g__navbar">
       <div className="g__navbar-links">
         <div className="g__navbar-links_logo">
-          <img src={Logo} alt="logo" href="#home"/>
+          <a href="#home"><img src={Logo} alt="logo"/></a>
         </div>
         <div className="g__navbar-links_container">
           <p><a href="#home">Home</a></p>

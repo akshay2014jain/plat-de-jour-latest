@@ -27,7 +27,7 @@ export default class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      active: 'true',
+      activeNow: 'home',
       image: ''
     }
   }
@@ -38,8 +38,8 @@ export default class App extends Component{
       .then(response => console.log(response.body))
   }
 
-  setActive(activeStatus){
-    this.setState({active: activeStatus});
+  setActiveNow(activeStatus){
+    this.setState({activeNow: activeStatus});
   }
 
   render(){
@@ -51,21 +51,21 @@ export default class App extends Component{
         </Helmet>
         <div className="gradient__bg">
           <Navbar/>
-          {this.state.active === 'true' && <Header/>}
-          {this.state.active === 'true' && <Feature/>}
+          {this.state.activeNow !== 'book' && <Header/>}
+          {this.state.activeNow !== 'book' && <Feature/>}
         </div>
         <div>
           <Card setState={state => this.setState(state)}/> 
-          {this.state.active === 'true' && 
+          {this.state.activeNow === 'knowFood' && 
             <div>
               <nav className="buttontemp">
-                <Button onClick = {() => this.setActive('false') } >
+                <Button onClick = {() => this.setActiveNow('book') } >
                   Know Your Food!
                 </Button> 
               </nav> 
             </div>
           }
-          {this.state.active === 'false' && <Result {...this.state}/>}
+          {this.state.activeNow === 'book' && <Result {...this.state}/>}
         </div>
         <Footer/>
       </div>

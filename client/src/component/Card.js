@@ -1,13 +1,22 @@
 import React , {Component} from 'react'
 import './card.css';
+import { css } from "@emotion/react";
 import startImage from '../images/try.jpeg';
+import PacmanLoader from "react-spinners/PacmanLoader";
+
+const override = css`
+  display: block;
+  margin: 1 auto;
+  border-color: red;
+`;
 
 export class Card extends Component{
 
   constructor(props){
     super(props)
     this.state = {
-      profileImg: startImage
+      profileImg: startImage,
+      loading: false
     }
   }
 
@@ -18,7 +27,7 @@ export class Card extends Component{
       console.log('Loading Result')
       if(reader.readyState === 2){
         let image = reader.result.split(",")[1]
-        this.setState({profileImg: reader.result })
+        that.setState({profileImg: reader.result, loading: true})
         const requestOptions = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -28,7 +37,8 @@ export class Card extends Component{
         fetch("/predict", requestOptions)
           .then(response => response.json())
           .then(function(jsonString){
-            that.props.setState({image: jsonString.body.category});
+            that.setState({loading: false})
+            that.props.setState({image: jsonString.body.category, activeNow: 'knowFood'});
             console.log(jsonString);
           })
       }
@@ -50,10 +60,17 @@ export class Card extends Component{
       </div>
       <input style = {{display:'none'}} type = "file" name = "image-upload" id = "input" accept = "image/*" onChange={this.imageHandler}/>
       <div className="cardheader-content" >
-        <label htmlFor="input" className="image-upload">
-            <i className="material-icons"> add_photo_alternate </i>
-              Choose your food photo 
-        </label>
+        {
+          this.state.loading === false ? 
+            <>
+              <label htmlFor="input" className="image-upload">
+                <i className="material-icons"> add_photo_alternate </i>
+                  Choose your food photo 
+              </label>
+            </>
+            :
+            <PacmanLoader color={'#FF4820'} loading={this.state.loading} css={override} size={20} />
+        }        
       </div>
       <div>
       </div>
