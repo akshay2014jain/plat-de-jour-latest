@@ -1,14 +1,14 @@
 {
-  "name": "express-stop",
+  "name": "plat-de-jour-express",
   "version": "1.0.0",
-  "description": "",
+  "description": "Express backend server for Plat-de-Jour",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Viraj Shah, Sahil Jain, Akshay Jain, Anish Punamiya",
   "license": "ISC",
   "dependencies": {
     "base-64": "^1.0.0",

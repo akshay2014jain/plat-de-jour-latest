@@ -47,7 +47,7 @@ export default class App extends Component{
       <div className="App">
         <Helmet>
           <meta charSet = "utf-8" />
-          <title> Plat De Joûr</title>
+          <title> Plat De Joûr </title>
         </Helmet>
         <div className="gradient__bg">
           <Navbar/>

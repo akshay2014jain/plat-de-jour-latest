@@ -1,6 +1,6 @@
 import React , {Component} from 'react'
 import './card.css';
-import startImage from './try.jpeg';
+import startImage from '../images/try.jpeg';
 
 export class Card extends Component{
 
