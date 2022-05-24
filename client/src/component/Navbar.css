@@ -2,8 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 2rem 3rem;
+    padding: 0rem 0rem 0rem 0rem;
 }
 .g__navbar-links {
     display: flex;
@@ -16,13 +15,15 @@
 }
 
 .g__navbar-links_logo img {
-    width: 150px;
-    height: 150px;
+    width: 7rem;
+    height: 7rem;   
+    padding: 0rem 0rem;
 }
 
 .g__navbar-links_container {
     display: flex;
     flex-direction: row;
+    align-items: ce;
 }
 
 .g__navbar-sign {
@@ -40,7 +41,6 @@
     font-size: 18px;
     line-height: 25px;
     text-transform: capitalize;
-
     margin: 0 1rem;
     cursor: pointer;
 }
@@ -61,8 +61,7 @@
 }
 
 .g__navbar-menu {
-    margin-left: 1rem;
-
+    margin-left: 0.5rem;
     display: none;
     position: relative;
 }
@@ -76,7 +75,6 @@
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
-    
     text-align: end;
     background: var(--color-footer);
     padding: 2rem;

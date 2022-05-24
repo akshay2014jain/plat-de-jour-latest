@@ -18,10 +18,6 @@ const Navbar = () => {
           <p><a href="#contact">Contact Us</a></p>
         </div>
       </div>
-            <div className="g__navbar-sign">
-                <p>Sign in</p>
-                <button type="button">Sign up</button>
-            </div>
         </div>
     )
 }

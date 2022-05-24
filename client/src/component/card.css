@@ -1,6 +1,7 @@
 .cardheader {
   display: flex;
   flex-direction: row;
+  padding: 0rem 0rem 3rem 0rem;
 }
 .cardheader-content {
   display: flex;
@@ -8,6 +9,8 @@
   align-items: flex-start;
   flex-direction: column;
   padding: 0rem 2.5rem;
+  overflow: hidden;
+  border-radius: 1rem;
 }
 
 .label{
@@ -35,7 +38,8 @@
   border-radius: 5px;
   padding: 1px 6px;
   margin: 10px 0px;
-  
+  overflow: hidden;
+  border-radius: 1rem;
 }
 
 .cardheader-content h1 {
@@ -114,6 +118,7 @@
   width: 80%;
   height: 80%;
   display: flex;
+  opacity: 40%;
 }
 
 .cardheader-content__people p {
@@ -193,3 +198,72 @@
       line-height: 16px;
   }
 }
+/* *{
+    margin: 0;
+    padding: 0;
+  }
+
+  .page{
+    height: 65vh;
+    background-color: white;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    font-family: cursive;
+  }
+  
+  .container{
+  height: 600px ;
+  width: 600px ;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+  }
+  
+  .heading {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  .img-holder{
+    margin:auto;
+    width: 300px;
+    height: 300px;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+  .img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }cardheader-content__people
+  
+  #input[type="file"]{
+    display: None;
+  }
+  
+  .label{
+    width: 100% ;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    font-family: cursive;
+  }
+  
+  .buttontemp{
+    text-align: center;
+  }
+  
+  .image-upload{
+    margin:auto;
+    width: 250px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+  } */

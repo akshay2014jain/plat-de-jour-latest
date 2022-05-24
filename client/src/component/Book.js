@@ -1,15 +1,32 @@
 import React , {Component} from 'react'
 import './book.css';
 import styled from "styled-components";
+import Restaurant from './restaurant'; 
 
-const Button = styled.button`
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  padding: 10px 60px;
-  border-radius: 5px;
-  margin: 10px 0px;
-  cursor: pointer;
+const Button2 = styled.button`
+width:auto;
+height:10%;
+background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+border: 0;
+border-radius: 8px;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+font-size: 16px;
+font-weight: 500;
+line-height: 2.5;
+outline: transparent;
+margin-top:5%;
+margin-bottom:5%;
+padding: 0 10rem;
+text-align: center;
+text-decoration: none;
+transition: box-shadow .2s ease-in-out;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+white-space: nowrap;
 `;
 
 export class Book extends Component{
@@ -17,106 +34,129 @@ export class Book extends Component{
   constructor(props){
     super(props)
     this.state = {
-      foodItem: this.props.foodImage,
-      showRecipe: 'No Show',
-      recipe: ''
+      instructions: true
     }
   }
-
-  getRecipe = (e) => {
-    const that = this
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({s: this.state.foodItem}),
-    };
-    fetch("/getMealDb", requestOptions)
-      .then(response => response.json())
-      .then(function(jsonString){
-        let recipe = JSON.parse(jsonString.body)
-        that.setState({recipe: recipe.meals[0], showRecipe: 'Show'})
-      })
-  };
 
   render(){
-    if(this.state.showRecipe === 'No Show'){
-    return (
-      <div className="page">
-          <div className="container">
-            <h1 className="heading"> It's  {this.state.foodItem} </h1>
-            <h1 className="heading">  </h1>
-            {this.state.showRecipe === "No Show" && <nav>
-              <Button onClick={this.getRecipe}>
-                Get Recipe
-              </Button>
-            </nav>}
-            <div >
-              {this.state.showRecipe !== "No Show" && <div>  </div> }
-            </div>
-          </div>
-        </div> 
-    )}
-    else{
-      return (<R recipe = {this.state.recipe}/>);
+    const recipedata ={
+      name: this.props.recipe["strMeal"],
+      image : this.props.recipe["strMealThumb"],
+      instructions : this.props.recipe["strInstructions"],
+      Ingredient1: this.props.recipe["strIngredient1"],
+      Ingredient2: this.props.recipe["strIngredient2"],
+      Ingredient3: this.props.recipe["strIngredient3"],
+      Ingredient4: this.props.recipe["strIngredient4"],
+      Ingredient5: this.props.recipe["strIngredient5"],
+      Ingredient6: this.props.recipe["strIngredient6"],
+      Ingredient7: this.props.recipe["strIngredient7"],
+      Ingredient8: this.props.recipe["strIngredient8"],
+      Ingredient9: this.props.recipe["strIngredient9"],
+      Ingredient10: this.props.recipe["strIngredient10"],
+      Ingredient11: this.props.recipe["strIngredient11"],
+      Ingredient12: this.props.recipe["strIngredient12"],
+      Ingredient13: this.props.recipe["strIngredient13"],
+      Ingredient14: this.props.recipe["strIngredient14"],
+      Ingredient15: this.props.recipe["strIngredient15"],
+      Ingredient16: this.props.recipe["strIngredient16"],
+      Ingredient17: this.props.recipe["strIngredient17"],
+      Ingredient18: this.props.recipe["strIngredient18"],
+      Ingredient19: this.props.recipe["strIngredient19"],
+      Ingredient20: this.props.recipe["strIngredient20"],
+      Measure1: this.props.recipe["strMeasure1"],
+      Measure2: this.props.recipe["strMeasure2"],
+      Measure3: this.props.recipe["strMeasure3"],
+      Measure4: this.props.recipe["strMeasure4"],
+      Measure5: this.props.recipe["strMeasure5"],
+      Measure6: this.props.recipe["strMeasure6"],
+      Measure7: this.props.recipe["strMeasure7"],
+      Measure8: this.props.recipe["strMeasure8"],
+      Measure9: this.props.recipe["strMeasure9"],
+      Measure10: this.props.recipe["strMeasure10"],
+      Measure11: this.props.recipe["strMeasure11"],
+      Measure12: this.props.recipe["strMeasure12"],
+      Measure13: this.props.recipe["strMeasure13"],
+      Measure14: this.props.recipe["strMeasure14"],
+      Measure15: this.props.recipe["strMeasure15"],
+      Measure16: this.props.recipe["strMeasure16"],
+      Measure17: this.props.recipe["strMeasure17"],
+      Measure18: this.props.recipe["strMeasure18"],
+      Measure19: this.props.recipe["strMeasure19"],
+      Measure20: this.props.recipe["strMeasure20"],
+      youtube : this.props.recipe["strYoutube"],
+      source : this.props.recipe["strSource"]
     }
-  }
-}
-
-function R (recipe) {
-  console.log(recipe.recipe)
-  let name = recipe.recipe["strMeal"];
-  let data = recipe.recipe["strInstructions"];
-  let image = recipe.recipe["strMealThumb"];
-  return (
-    <div>
-      <img src = {image} width={250} height={250} alt="Something"/>
-      <h1>
-        {name}
-      </h1>
-      <br/>
-      <div className="container">
-        <br/>
-          <p>
-            <h2><i>Recipe : </i> </h2>
-            <br/>
-            {data} 
-            <br/>
-            <br/>
-            <h2><i>Ingredients</i></h2>
-            <br/>
-            {recipe.recipe["strIngredient1"]} 
-            {recipe.recipe["strIngredient2"]}
-            <br/>
-            {recipe.recipe["strIngredient3"]}
-            <br/>
-            {recipe.recipe["strIngredient4"]}
-            <br/>
-            {recipe.recipe["strIngredient5"]}
-            <br/>
-            {recipe.recipe["strIngredient6"]}
-            <br/>
-            {recipe.recipe["strIngredient7"]}
-            <br/>
-            {recipe.recipe["strIngredient8"]}
-            <br/>
-            {recipe.recipe["strIngredient9"]}
-            <br/>
-            {recipe.recipe["strIngredient10"]}
-            <br/>
-            {recipe.recipe["strIngredient11"]}
-            <br/> 
-            { <a href={recipe.recipe["strYoutube"]} >
-              Recipe Video
-            </a> } <br/>
-            { <a href={recipe.recipe["strSource"]}>
-              Source Video
-            </a> } 
-          </p> 
+    return (
+      <div>
+        <div className="bookheader">
+        <div className="bookheader-content">
+        <img className="image-upload2" src = {recipedata.image} alt="recipe"/>
+        <h2>{recipedata.name}</h2></div>
+          <div className="bookheader-content">
+            
+            <Button2 onClick = {()=> this.setState({instructions: true})}> Constituents </Button2>
+            <Button2 onClick = {()=> this.setState({instructions: false})}> Instructions</Button2>
+          </div>
+        </div>
+        {this.state.instructions &&(<div className="bookheader-content">
+      <table>
+            <tr>
+              <th> Ingredients </th>
+              <th> Quantity </th>
+            </tr>
+            <tr>
+              <th> {recipedata.Ingredient1} </th>
+              <th>{recipedata.Measure1}</th>
+            </tr>
+            <tr>
+              <th> {recipedata.Ingredient2} </th>
+              <th>{recipedata.Measure2}</th>
+            </tr>
+            <tr>
+              <th> {recipedata.Ingredient3} </th>
+              <th>{recipedata.Measure3}</th>
+            </tr>
+            <tr>
+              <th> {recipedata.Ingredient4} </th>
+              <th>{recipedata.Measure4}</th>
+            </tr>
+            <tr>
+              <th> {recipedata.Ingredient5} </th>
+              <th>{recipedata.Measure5}</th>
+            </tr>
+            <tr>
+              <th> {recipedata.Ingredient6} </th>
+              <th>{recipedata.Measure6}</th>
+            </tr>
+            <tr>
+              <th> {recipedata.Ingredient7} </th>
+              <th>{recipedata.Measure7}</th>
+            </tr>
+            <tr>
+              <th> {recipedata.Ingredient8} </th>
+              <th>{recipedata.Measure8}</th>
+            </tr>
+            <tr>
+              <th> {recipedata.Ingredient9} </th>
+              <th>{recipedata.Measure9}</th>
+            </tr>
+            <tr>
+              <th> {recipedata.Ingredient10} </th>
+              <th>{recipedata.Measure10}</th>
+            </tr>
+            <tr>
+              <th> {recipedata.Ingredient11} </th>
+              <th>{recipedata.Measure11}</th>
+            </tr>
+            </table>
+        </div>)}
+        {!this.state.instructions && (<div className="bookheader-content">
+          
+          <p>{recipedata.instructions}</p></div>)}
+      <Restaurant/>
       </div>
-    <h1 className="heading"> <i>Dont wanna cook? </i></h1>
-    <Button>Restaurants</Button>
-    </div>
-  )
+    )
+  }
 }
 
 export default Book;

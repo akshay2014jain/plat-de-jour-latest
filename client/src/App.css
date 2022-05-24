@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  padding: 0;
+  padding: 0rem 0rem 0rem 0rem;
   margin: 0;
   scroll-behavior:smooth;
 }
@@ -30,8 +30,8 @@ a {
 }
 
 .App {
-  height: 100vh;
-  font-family: sans-serif;
+  height: 100%;
+  font-family: var(--font-family);
   
 }
 .heading1{
@@ -55,19 +55,10 @@ a {
 
 .buttontemp{
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.button2{
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  padding: 10px 60px;
-  border-radius: 5px;
-  margin: 10px 0px;
-  cursor: pointer;
-  font-family : cursive;
-  text-align: center;
-}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

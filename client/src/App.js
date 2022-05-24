@@ -51,8 +51,8 @@ export default class App extends Component{
         </Helmet>
         <div className="gradient__bg">
           <Navbar/>
-          {this.state.activeNow !== 'book' && <Header/>}
-          {this.state.activeNow !== 'book' && <Feature/>}
+          <Header/>
+          <Feature/>
         </div>
         <div>
           <Card setState={state => this.setState(state)}/> 
