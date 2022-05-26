@@ -34,7 +34,8 @@ app.post('/getRestaurants', (req, res) => {
     longitude = req.body.longitude
     location = latitude+','+longitude
     query = req.body.foodImage + "+near+me"
-    request('https://maps.googleapis.com/maps/api/place/textsearch/json?query='+query+'&location='+location+'&radius=2000&region=us&type=restaurant&key=AIzaSyAsQK6EaaZotrYhVDQ-FVhcs3y-OD1NhgQ', function(error, response){
+    public_api_key = "AIzaSyAsQK6EaaZotrYhVDQ-FVhcs3y-OD1NhgQ"
+    request('https://maps.googleapis.com/maps/api/place/textsearch/json?query='+query+'&location='+location+'&radius=2000&region=us&type=restaurant&key='+public_api_key, function(error, response){
         if (!error && response.statusCode == 200) {
             res.json(response);
         }
