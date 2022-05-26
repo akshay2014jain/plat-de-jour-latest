@@ -1,7 +1,7 @@
 import React , {Component} from 'react'
 import './book.css';
 import styled from "styled-components";
-import Restaurant from './restaurant'; 
+import Restaurant from './Restaurant'; 
 
 const Button2 = styled.button`
 width:auto;
@@ -153,7 +153,7 @@ export class Book extends Component{
         {!this.state.instructions && (<div className="bookheader-content">
           
           <p>{recipedata.instructions}</p></div>)}
-      <Restaurant/>
+      <Restaurant restaurants={this.props.restaurants}/>
       </div>
     )
   }

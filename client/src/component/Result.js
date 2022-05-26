@@ -10,16 +10,18 @@ export default class Result extends Component{
     this.state = {
       showBook: false,
       foodImage: this.props.image,
-      recipe: ''
+      recipe: '',
+      restaurants: null,
+      onLoad: false
     }
   }
 
   componentDidMount(){
-    this.getRecipe();
+      this.getRecipe();
+      this.getRestaurants();
   }
 
   getRecipe = (e) => {
-    console.log('calling get recipe')
     const that = this
     const requestOptions = {
       method: 'POST',
@@ -32,6 +34,32 @@ export default class Result extends Component{
         let recipe = JSON.parse(jsonString.body)
         that.setState({recipe: recipe.meals[0]})
       })
+  };
+
+  getRestaurants = (e) => {
+
+    const that = this
+    let lat = ''
+    let lon = ''
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+      lat = position.coords.latitude
+      lon = position.coords.longitude
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({latitude: lat, longitude: lon, foodImage: that.state.foodImage}),
+    };
+
+    fetch("/getRestaurants", requestOptions)
+      .then(response => response.json())
+      .then(function(jsonString){
+        let json = JSON.parse(jsonString.body)
+        that.setState({restaurants: json.results})
+      })
+
   };
 
   setshowBook(showParam){

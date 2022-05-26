@@ -29,6 +29,18 @@ app.post('/getMealDb', (req, res) => {
     })
 });
 
+app.post('/getRestaurants', (req, res) => {
+    latitude = req.body.latitude
+    longitude = req.body.longitude
+    location = latitude+','+longitude
+    query = req.body.foodImage + "+near+me"
+    request('https://maps.googleapis.com/maps/api/place/textsearch/json?query='+query+'&location='+location+'&radius=2000&region=us&type=restaurant&key=AIzaSyAsQK6EaaZotrYhVDQ-FVhcs3y-OD1NhgQ', function(error, response){
+        if (!error && response.statusCode == 200) {
+            res.json(response);
+        }
+    })
+});
+
 app.post('/predict', (req, res) => {
     jsonData = req.body
     request.post({url: 'https://lit-fjord-92060.herokuapp.com/predict', json:jsonData}, function (error, response) {

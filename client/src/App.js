@@ -33,6 +33,7 @@ export default class App extends Component{
   }
 
   componentDidMount(){
+
     fetch("/getData")
       .then(response => response.json())
       .then(response => console.log(response.body))
