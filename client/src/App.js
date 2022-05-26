@@ -11,6 +11,11 @@ export default class App extends Component{
     fetch("/getData")
       .then(response => response.json())
       .then(response => console.log(response.body))
+
+      navigator.geolocation.getCurrentPosition(function(position) {
+        console.log(position.coords.latitude)
+        console.log(position.coords.longitude)
+      });
   }
 
   render(){

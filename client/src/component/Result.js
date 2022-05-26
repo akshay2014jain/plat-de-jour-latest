@@ -45,6 +45,7 @@ export default class Result extends Component{
     navigator.geolocation.getCurrentPosition(function(position) {
       lat = position.coords.latitude
       lon = position.coords.longitude
+      console.log(lat + " , "+lon)
     });
 
     const requestOptions = {
