@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Article from './Article';
-import './restaurant.css';
+import './restaurants.css';
 
-export class Restaurant extends Component{
+export class Restaurants extends Component{
 
   render(){
     const restaurants = this.props.restaurants
@@ -14,6 +14,7 @@ export class Restaurant extends Component{
         </div>
         <div className="gpt3__blog-container">
         {
+        restaurants !== null && 
         restaurants.map((restaurant) => (
           
           <div className="gpt3__blog-container_groupA">
@@ -27,4 +28,4 @@ export class Restaurant extends Component{
   }
 }
 
-export default Restaurant
+export default Restaurants
