@@ -17,8 +17,8 @@ export default class Result extends Component{
   }
 
   componentDidMount(){
-      this.getRecipe();
-      this.getRestaurants();
+    this.getRecipe();
+    this.getRestaurants();
   }
 
   getRecipe = (e) => {
@@ -28,12 +28,12 @@ export default class Result extends Component{
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({s: that.state.foodImage}),
     };
-    fetch("/getMealDb", requestOptions)
+    setTimeout(() => fetch("/getMealDb", requestOptions)
       .then(response => response.json())
       .then(function(jsonString){
         let recipe = JSON.parse(jsonString.body)
         that.setState({recipe: recipe.meals[0]})
-      })
+      }), 250);
   };
 
   getRestaurants = (e) => {
@@ -54,17 +54,20 @@ export default class Result extends Component{
       body: JSON.stringify({latitude: lat, longitude: lon, foodImage: that.state.foodImage}),
     };
 
-    fetch("/getRestaurants", requestOptions)
+    setTimeout(() => fetch("/getRestaurants", requestOptions)
       .then(response => response.json())
       .then(function(jsonString){
         let json = JSON.parse(jsonString.body)
         that.setState({restaurants: json.results})
-      })
-
+      }), 500);
   };
 
   setshowBook(showParam){
     this.setState({showBook: showParam});
+  }
+
+  getContent(){
+    this.setshowBook(true)
   }
 
   render(){
@@ -76,7 +79,7 @@ export default class Result extends Component{
         <h3>It's our favorite dish {this.state.foodImage}.</h3>
       </div>)}
       {!this.state.showBook && (<div className="result__cta-btn">
-        <button onClick = {() => this.setshowBook(true)} type="button">Get Recipe</button>
+        <button onClick = {() => this.getContent()} type="button">Get Recipe</button>
       </div>)}
       {this.state.showBook && <Book {...this.state}/>}
       </div>

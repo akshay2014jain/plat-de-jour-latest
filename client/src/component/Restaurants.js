@@ -15,7 +15,7 @@ export class Restaurants extends Component{
         {
         restaurants !== null && 
         restaurants.map((restaurant) => (
-          <div className="g__blog-container_groupA">
+          <div key={restaurant.place_id} className="g__blog-container_groupA">
             <Article details={restaurant}/>
           </div>
         ))

@@ -101,6 +101,7 @@ export class Book extends Component{
         </div>
         {this.state.instructions &&(<div className="bookheader-content">
       <table>
+        <tbody>
             <tr>
               <th> Ingredients </th>
               <th> Quantity </th>
@@ -149,7 +150,8 @@ export class Book extends Component{
               <th> {recipedata.Ingredient11} </th>
               <th>{recipedata.Measure11}</th>
             </tr>
-            </table>
+          </tbody>
+        </table>
         </div>)}
         {!this.state.instructions && (<div className="bookheader-content">
           
