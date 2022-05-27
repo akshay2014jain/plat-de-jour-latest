@@ -16,9 +16,16 @@ const featuredata = [
         title: 'Step 4',
         text: 'Get the recipe & start preapring'
     },{
-        title : 'Step 5',
-        text: 'The last & most important step is : Enjoyyy'
-    }
+      title : 'Step 5',
+      text: "Missing Ingredients? Get it delivered! "
+  },
+    {
+        title : 'Step 6',
+        text: "Don't feel like cooking? Order Online"
+    },{
+      title : 'Step 7',
+      text: 'The last & most important step is : Enjoyyy'
+  }
 ]
 
 const Features = () => (

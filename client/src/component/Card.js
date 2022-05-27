@@ -5,8 +5,8 @@ import startImage from '../images/try.jpeg';
 import PacmanLoader from "react-spinners/PacmanLoader";
 
 const override = css`
-  display: block;
-  margin: 1 auto;
+  display: flex;
+  margin: 5rem 8rem 0rem 2rem;
   border-color: red;
 `;
 
@@ -69,7 +69,7 @@ export class Card extends Component{
               </label>
             </>
             :
-            <PacmanLoader color={'#FF4820'} loading={this.state.loading} css={override} size={20} />
+            <PacmanLoader color={'#FF4820'} loading={this.state.loading} css={override} size={30} />
         }        
       </div>
       <div>
