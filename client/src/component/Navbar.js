@@ -8,7 +8,7 @@ import AboutUs from './AboutUs';
 const Navbar = () => {
     return (
       <Router>
-        <div className = "g__navbar">
+        <div className="g__navbar">
           <div className="g__navbar-links_logo">
             <a href="/#home"><img src={Logo} alt="logo"/></a>
           </div>

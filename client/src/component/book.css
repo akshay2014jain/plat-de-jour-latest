@@ -3,6 +3,15 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  
+}
+
+.bookheader_missing {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  
 }
 
 .bookheader-content {
@@ -10,20 +19,34 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  padding: 0rem 0.5rem;
   text-align: center;
+}
+
+.youtube{
+  font-size:48px;
+  color:red;
+  padding: 0rem 1rem 1rem;
+  cursor: pointer;
+}
+.google{
+   font-size:48px;
+   color:green;
+   padding: 0rem 0rem 1rem;
+   cursor: pointer;
 }
 
 table {
   border: 2px solid forestgreen;
-  width: 1250px;
-  height: 200px;
+  width: 40rem;
+  height: 30rem;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
   color: #fff;
- 
+  padding: auto;
+  align-items: center;
+  margin-bottom: 5rem;
 }
   
 th {
@@ -35,7 +58,7 @@ td {
 }
 
 .image-upload2{
-  margin:1rem;
+  margin-right:2rem;
   display: flex;
   cursor: pointer;
   text-decoration-color: #FF4820;
@@ -58,14 +81,13 @@ td {
 }
 
 .bookheader-content h2 {
-  justify-content: center;
-  text-align: center;
+  justify-content: left;
+  text-align: left;
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 50px;
   line-height: 75px;
   letter-spacing: -0.04em;
-  padding: 5% 5%;
 }
 
 .bookheader-content p {
@@ -75,8 +97,9 @@ td {
   line-height: 28px;
   color: #fff;
   display: flex;
-  margin-top: 1.5rem;
-  margin-right: 1.5rem;
+  padding: auto;
+  align-items: center;
+  margin-bottom: 5rem;
 }
 
 .bookheader-content__input {
@@ -146,6 +169,7 @@ td {
   color: #fff;
   text-align: center;
   display: flex;
+  padding: 2rem 2rem 2rem 2rem;
 }
 
 .bookheader-image {

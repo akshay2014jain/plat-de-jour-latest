@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "private": true,
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@iconify/icons-mdi": "^1.2.16",
     "@iconify/react": "^3.2.2",
     "@mui/icons-material": "^5.8.0",

@@ -2,6 +2,8 @@ import React , {Component} from 'react'
 import './book.css';
 import styled from "styled-components";
 import Restaurants from './Restaurants'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYoutube, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 const Button2 = styled.button`
 width:auto;
@@ -91,9 +93,8 @@ export class Book extends Component{
         <div className="bookheader">
         <div className="bookheader-content">
         <img className="image-upload2" src = {recipedata.image} alt="recipe"/>
-        <h2>{recipedata.name}</h2></div>
+          <h2>{recipedata.name}</h2></div>
           <div className="bookheader-content">
-            
             <Button2 onClick = {()=> this.setState({instructions: true})}> Constituents </Button2>
             <Button2 onClick = {()=> this.setState({instructions: false})}> Instructions</Button2>
           </div>
@@ -153,6 +154,10 @@ export class Book extends Component{
         {!this.state.instructions && (<div className="bookheader-content">
           
           <p>{recipedata.instructions}</p></div>)}
+      <FontAwesomeIcon className="youtube" icon = {faYoutube} href={recipedata.youtube}></FontAwesomeIcon>
+      <FontAwesomeIcon className ="google" icon = {faGoogle} href = {recipedata.source}></FontAwesomeIcon>
+      <div className="bookheader_missing">
+      </div>
       <Restaurants restaurants={this.props.restaurants}/>
       </div>
     )
