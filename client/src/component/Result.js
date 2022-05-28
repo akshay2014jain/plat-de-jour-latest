@@ -39,19 +39,11 @@ export default class Result extends Component{
   getRestaurants = (e) => {
 
     const that = this
-    let lat = ''
-    let lon = ''
-
-    navigator.geolocation.getCurrentPosition(function(position) {
-      lat = position.coords.latitude
-      lon = position.coords.longitude
-      console.log(lat + " , "+lon)
-    });
-
+    console.log(that.props)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({latitude: lat, longitude: lon, foodImage: that.state.foodImage}),
+      body: JSON.stringify({latitude: this.props.lat, longitude: this.props.lon, foodImage: that.state.foodImage}),
     };
 
     setTimeout(() => fetch("/getRestaurants", requestOptions)

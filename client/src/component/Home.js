@@ -25,11 +25,34 @@ export default class Home extends Component{
         super(props)
         this.state = {
             activeNow: 'home',
-            image: ''
+            image: '',
+            lat: '',
+            lon: ''
         }
     }
 
-    setActiveNow(activeStatus){
+    componentDidMount(){
+        let latitude = 0;
+        let longitude = 0;
+
+        let success = position => {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            this.setState(
+                {
+                    lat: latitude,
+                    lon: longitude
+                }
+            );
+        };
+
+        function error() {
+            console.log("Unable to retrieve your location");
+        }
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
+
+    setActiveNow = (activeStatus) =>{
         this.setState({activeNow: activeStatus});
     }
 
