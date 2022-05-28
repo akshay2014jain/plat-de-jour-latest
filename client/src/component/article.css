@@ -3,7 +3,7 @@
     height: 15rem;
     display: flex;
     flex-direction: column;
-    background: #0d254a;
+    background: linear-gradient(90deg, #86d5ff 65%, rgba(252,252,252,1) 100%);
 }
 
 
@@ -21,7 +21,7 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 35px;
-    color: whitesmoke;
+    color: black;
 }
 
 .g__blog-container_article-content h3 {
@@ -29,7 +29,7 @@
     font-size: 32px;
     font-weight: 800;
     line-height: 30.30px;
-    color: whitesmoke;
+    color: black;
 
     cursor: pointer;
 }

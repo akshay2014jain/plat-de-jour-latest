@@ -27,6 +27,8 @@
   color:red;
   padding: 0rem 1rem 1rem;
   cursor: pointer;
+  align-items: center;
+  padding-left: 70rem;
 }
 .google{
    font-size:48px;
@@ -34,17 +36,18 @@
    padding: 0rem 0rem 1rem;
    cursor: pointer;
 }
-
+.tablex{
+  color: black;
+  font-family:var(--font-family) ;
+}
 table {
-  border: 2px solid forestgreen;
+  border: 2px solid black;
   width: 40rem;
   height: 30rem;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  color: #fff;
-  padding: auto;
   align-items: center;
   margin-bottom: 5rem;
 }
@@ -58,16 +61,14 @@ td {
 }
 
 .image-upload2{
-  margin-right:2rem;
+  margin-right:rem;
   display: flex;
   cursor: pointer;
   text-decoration-color: #FF4820;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #FF4820;
   width: 300px;
   height: 300px;
-  overflow: hidden;
-  border-radius: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .bookheader-content h1 {
@@ -77,7 +78,6 @@ td {
   font-size: 62px;
   line-height: 75px;
   letter-spacing: -0.04em;
-  
 }
 
 .bookheader-content h2 {
@@ -92,14 +92,14 @@ td {
 
 .bookheader-content p {
   font-family: var(--font-family);
-  font-weight: 400;
+  font-weight: 300;
   font-size: 20px;
   line-height: 28px;
-  color: #fff;
+  color: black;
   display: flex;
   padding: auto;
   align-items: center;
-  margin-bottom: 5rem;
+  padding: 1rem 3rem 3rem 1rem;
 }
 
 .bookheader-content__input {
@@ -205,6 +205,7 @@ td {
   .bookheader-content p {
       font-size: 16px;
       line-height: 24px;
+      color: black;
   }
   
   .bookheader-content__people {

@@ -8,7 +8,7 @@ import Footer from './footer';
 import Result from './Result';
 
 const Button = styled.button`
-background-color: #FF4820;
+background-color: #AE67FA ;
 color: white;
 font-size: 20px;
 padding: 10px 60px;
