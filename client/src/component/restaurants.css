@@ -9,6 +9,7 @@
     width: 100%;
     text-align: left;
     margin-bottom: 5rem;
+    color: var(--font-family);
 }
 
 .g__blog-heading h1 {
@@ -16,7 +17,7 @@
     line-height: 75px;
     font-family: var(--font-family);
     font-weight: 800;
-    color: white;
+    color: var(--font-family);
 }
 
 .g__blog-container {

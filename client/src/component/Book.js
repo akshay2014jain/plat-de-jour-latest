@@ -90,6 +90,8 @@ export class Book extends Component{
     }
     return (
       <div>
+        <FontAwesomeIcon className="youtube" icon = {faYoutube} href={recipedata.youtube}></FontAwesomeIcon>
+      <FontAwesomeIcon className ="google" icon = {faGoogle} href = {recipedata.source}></FontAwesomeIcon>
         <div className="bookheader">
         <div className="bookheader-content">
         <img className="image-upload2" src = {recipedata.image} alt="recipe"/>
@@ -103,8 +105,8 @@ export class Book extends Component{
       <table>
         <tbody>
             <tr>
-              <th> Ingredients </th>
-              <th> Quantity </th>
+              <th className="tablex"> Ingredients </th>
+              <th className="tablex"> Quantity </th>
             </tr>
             <tr>
               <th> {recipedata.Ingredient1} </th>
@@ -154,10 +156,8 @@ export class Book extends Component{
         </table>
         </div>)}
         {!this.state.instructions && (<div className="bookheader-content">
-          
+
           <p>{recipedata.instructions}</p></div>)}
-      <FontAwesomeIcon className="youtube" icon = {faYoutube} href={recipedata.youtube}></FontAwesomeIcon>
-      <FontAwesomeIcon className ="google" icon = {faGoogle} href = {recipedata.source}></FontAwesomeIcon>
       <div className="bookheader_missing">
       </div>
       <Restaurants restaurants={this.props.restaurants}/>
