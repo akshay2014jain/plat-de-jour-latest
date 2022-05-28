@@ -67,8 +67,7 @@ export default class Result extends Component{
       <div className="result__cta">
 
       {!this.state.showBook && (<div className="result__cta-content">
-        <p>Our AI Model told us </p>
-        <h3>It's our favorite dish {this.state.foodImage}.</h3>
+        <h3>Our AI Model informed us, It's our favorite dish - {this.state.foodImage}</h3>
       </div>)}
       {!this.state.showBook && (<div className="result__cta-btn">
         <button onClick = {() => this.getContent()} type="button">Get Recipe</button>

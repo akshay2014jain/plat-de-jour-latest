@@ -52,8 +52,8 @@ export class Card extends Component{
       <div className="cardheader" id="start">
       <div className="cardheader-content">
       <h1 className="gradient__text">What's Cooking?</h1>
-        <p>Upload the picture </p>
-        <p>& let us find the perfect recipe for you</p>
+        <p>Upload an Image & </p>
+        <p>We'll pick the Ideal Recipe for you!</p>
         </div>
       <div className="cardheader-content__people">
         <img src= {profileImg} alt="profile"/>
@@ -69,7 +69,7 @@ export class Card extends Component{
               </label>
             </>
             :
-            <PacmanLoader color={'#FF4820'} loading={this.state.loading} css={override} size={30} />
+            <PacmanLoader color={'#AE67FA'} loading={this.state.loading} css={override} size={30} />
         }        
       </div>
       <div>

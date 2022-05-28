@@ -5,7 +5,7 @@ import './footer.css';
 const Footer = () => (
   <div className="g__footer section__padding" id="contact">
     <div className="g__footer-heading">
-      <h1 className="gradient__text">Step in to the future of healthy eating & homecooking</h1>
+      <h1 className="gradient__text">Step into the Future of Healthy Eating & Homecooking</h1>
     </div>
 
     <div className="g__footer-links">
