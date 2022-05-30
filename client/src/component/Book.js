@@ -90,8 +90,8 @@ export class Book extends Component{
     }
     return (
       <div>
-        <FontAwesomeIcon className="youtube" icon = {faYoutube} href={recipedata.youtube}></FontAwesomeIcon>
-      <FontAwesomeIcon className ="google" icon = {faGoogle} href = {recipedata.source}></FontAwesomeIcon>
+        <a href={recipedata.youtube} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="youtube" icon = {faYoutube}></FontAwesomeIcon></a>
+        <a href={recipedata.source} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className ="google" icon = {faGoogle}></FontAwesomeIcon></a>
         <div className="bookheader">
         <div className="bookheader-content">
         <img className="image-upload2" src = {recipedata.image} alt="recipe"/>

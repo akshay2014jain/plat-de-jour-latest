@@ -38,7 +38,7 @@ export class Card extends Component{
           .then(response => response.json())
           .then(function(jsonString){
             that.setState({loading: false})
-            that.props.setState({image: jsonString.body.category, activeNow: 'knowFood'});
+            that.props.setState({image: jsonString.body.category, activeNow: 'knowFood', knowButton: false});
             console.log(jsonString);
           })
       }
@@ -69,7 +69,7 @@ export class Card extends Component{
               </label>
             </>
             :
-            <PacmanLoader color={'#AE67FA'} loading={this.state.loading} css={override} size={30} />
+            <PacmanLoader color={'#AE67FA'} loading={this.state.loading} css={override} size={25} />
         }        
       </div>
       <div>

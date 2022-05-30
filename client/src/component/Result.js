@@ -10,6 +10,7 @@ export default class Result extends Component{
     this.state = {
       showBook: false,
       foodImage: this.props.image,
+      confidence: this.props.confidence,
       recipe: '',
       restaurants: null,
       onLoad: false
@@ -64,13 +65,12 @@ export default class Result extends Component{
 
   render(){
     return(
-      <div className="result__cta">
-
+      <div className="result__cta" id="results">
       {!this.state.showBook && (<div className="result__cta-content">
-        <h3>Our AI Model informed us, It's our favorite dish - {this.state.foodImage}</h3>
+        <h3>Our AI Model informed us, It's our favorite dish - {this.state.foodImage}, Confidence Score - {this.state.confidence}</h3>
       </div>)}
       {!this.state.showBook && (<div className="result__cta-btn">
-        <button onClick = {() => this.getContent()} type="button">Get Recipe</button>
+        <a href="/#results"><button onClick = {() => this.getContent()} className={this.state.confidence <= 0.2 ? 'disabledRecipe' : 'enabledRecipe'} disabled={this.state.confidence <= 0.2 ? true : false} type="button">Get Recipe</button></a>
       </div>)}
       {this.state.showBook && <Book {...this.state}/>}
       </div>

@@ -25,7 +25,9 @@ export default class Home extends Component{
         super(props)
         this.state = {
             activeNow: 'home',
+            knowButton: true,
             image: '',
+            confidence: 0.1,
             lat: '',
             lon: ''
         }
@@ -65,15 +67,13 @@ export default class Home extends Component{
                 </div>
                 <div>
                     <Card setState={state => this.setState(state)}/> 
-                    {this.state.activeNow === 'knowFood' && 
-                        <div>
-                            <nav className="buttontemp">
-                                <Button onClick = {() => this.setActiveNow('book') } >
-                                    Know Your Food!
-                                </Button> 
-                            </nav> 
-                        </div>
-                    }
+                    <div>
+                        <nav className="buttontemp">
+                            <Button className={this.state.knowButton ? "knowButton":""} disabled={this.state.knowButton} onClick = {() => this.setActiveNow('book') } >
+                                Know Your Food!
+                            </Button> 
+                        </nav> 
+                    </div>
                     {this.state.activeNow === 'book' && <Result {...this.state}/>}
                 </div>
                 <Footer/>

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './Navbar.css';
 import Logo from '../images/logo.png'
 import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
 import Home from './Home';
 import AboutUs from './AboutUs';
 
-const Navbar = () => {
+export class Navbar extends Component{
+
+  render(){
     return (
       <Router>
         <div className="g__navbar">
@@ -17,6 +19,7 @@ const Navbar = () => {
             <p><a href="/#hiw">How It Works</a></p>
             <p><a href="/#start">Try Now</a></p>
             <p><a href="/about">About the Team</a></p>
+            <p><a href="/about">AI Model</a></p>
             <p><a href="/contact">Contact Us</a></p> 
           </div>
         </div>
@@ -26,5 +29,6 @@ const Navbar = () => {
         </Routes>
       </Router>
     )
+  }
 }
 export default Navbar;

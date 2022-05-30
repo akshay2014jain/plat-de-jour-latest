@@ -26,3 +26,8 @@
     align-items: center;
     justify-content: center;
 }
+
+.knowButton{
+    opacity: 0.65; 
+    cursor: not-allowed !important;
+}
