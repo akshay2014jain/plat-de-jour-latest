@@ -7,10 +7,15 @@ import Sahil from '../images/sahil.jpg'
 import Viraj from '../images/viraj.jpg'
 
 export default class AboutUs extends Component{
+
+    componentDidMount(){
+        window.scrollTo(0, 0);
+    }
+    
     render(){
         return(
             <>
-            <div className='aboutus'>
+            <div className='aboutus' id="aboutus">
                 <div className="about-section">
                     <h1>About Plat De Jour</h1>
                     <p>Plat De Jour is an AI-powered food image recognition tool that takes an image as input and provides a recipe along with the ingredients and a list of restaurants that serve the food item. Our image-to-recipe generation system is built upon state-of-the-art deep learning techniques and aims to promote AI in the food and healthcare industry.</p>

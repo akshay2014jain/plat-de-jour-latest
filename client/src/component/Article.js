@@ -14,7 +14,7 @@ export class Article extends Component{
         <p>{restaurant_data.formatted_address}</p>
       </div>
     </div>
-    <p className='order_online'><u>Order Online</u></p>
+    <p className='order_online'><u><a href={"https://www.google.com/maps/search/"+restaurant_data.name} target="_blank" rel="noopener noreferrer">Order Online</a></u></p>
   </div>
 
     )

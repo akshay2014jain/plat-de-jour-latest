@@ -2,6 +2,7 @@ import React from 'react';
 import {Component} from "react";
 import './result.css';
 import Book from './Book';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default class Result extends Component{
   
@@ -65,17 +66,17 @@ export default class Result extends Component{
       {!this.state.showBook && (<div className="result__cta" id="results">
       {!this.state.showBook && (<div className="result__cta-content">
         {
-          this.state.confidence < 0.90 ? 
-          <><h3 >You seemed to have uploaded an incorrect image.</h3><h4> Our Model predicted it to be - {this.state.foodImage} with Confidence Score - {this.state.confidence}</h4></>
+          this.state.confidence < 90 ? 
+          <><h3 >You seemed to have uploaded an incorrect image.</h3><h4> Our Model predicted it to be - {this.state.foodImage} with Confidence Score - {this.state.confidence} %</h4></>
           :
-          <><h3>Our AI Model informed us, It's our favorite dish - {this.state.foodImage}</h3><h4>[Confidence Score - {this.state.confidence}]</h4></>
+          <><h3>Our AI Model informed us, It's our favorite dish - {this.state.foodImage}</h3><h4>[Confidence Score - {this.state.confidence} %]</h4></>
         }
       </div>)}
       {!this.state.showBook && (<div className="result__cta-btn">
-        <a href="/#viraj"><button onClick = {() => this.setshowBook(true)} className={this.state.confidence < 0.90 ? 'disabledRecipe' : 'enabledRecipe'} disabled={this.state.confidence < 0.90 ? true : false} type="button">Get Recipe</button></a>
+        <Link smooth to="/#results"><button onClick = {() => this.setshowBook(true)} className={this.state.confidence < 90 ? 'disabledRecipe' : 'enabledRecipe'} disabled={this.state.confidence < 90 ? true : false} type="button">Get Recipe</button></Link>
       </div>)}</div>)}
       <div>
-      {this.state.showBook && <Book {...this.state}/>}
+      {this.state.showBook && <Book setState={state => this.setState(state)} {...this.state}/>}
       </div>
       </>
     );

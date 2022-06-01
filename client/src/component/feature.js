@@ -1,6 +1,7 @@
 import React from 'react';
 import './feature.css';
 import Feat from './feat.js';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const featuredata = [
     {
@@ -32,7 +33,7 @@ const Features = () => (
     <div className="g__features section__padding" id="hiw">
       <div className="g__features-heading">
         <h1 className="gradient__text">The Future of Food is 'Now'. Step into the Future today. Make it Happen.</h1>
-        <p><a href="/#start">Get Started</a></p>
+        <p><Link smooth to="/#start">Get Started</Link></p>
       </div>
       <div className="g__features-container">
         {featuredata.map((item, index) => (

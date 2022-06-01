@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styled from "styled-components";
+import { HashLink as Link } from 'react-router-hash-link';
 import './home.css'
 import Card  from './Card';
 import Header from './Header';
@@ -27,7 +28,7 @@ export default class Home extends Component{
             activeNow: 'home',
             knowButton: true,
             image: '',
-            confidence: 1.0,
+            confidence: 100,
             lat: '',
             lon: ''
         }
@@ -69,11 +70,11 @@ export default class Home extends Component{
                     <Card setState={state => this.setState(state)}/> 
                     <div>
                         <nav className="buttontemp">
-                            <a href="/#results">
+                            <Link smooth to="/#results">
                                 <Button className={this.state.knowButton ? "knowButton":""} disabled={this.state.knowButton} onClick = {() => this.setActiveNow('book') } >
                                     Know Your Food!
                                 </Button> 
-                            </a>
+                            </Link>
                         </nav> 
                     </div>
                     {this.state.activeNow === 'book' && <Result {...this.state}/>}

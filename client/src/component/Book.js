@@ -5,6 +5,7 @@ import Restaurants from './Restaurants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Button2 = styled.button`
 background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
@@ -37,6 +38,11 @@ export class Book extends Component{
     this.state = {
       instructions: true
     }
+  }
+
+  
+  goBack(){
+    this.props.setState({showBook: false});
   }
 
   render(){
@@ -87,14 +93,15 @@ export class Book extends Component{
       youtube : this.props.recipe["strYoutube"],
       source : this.props.recipe["strSource"]
     }
+
     return (
-      <div className='book_css'>
+      <div className='book_css' id='results'>
         <div className='references'>
           <div className='awesome_links'>
           <a href={recipedata.youtube} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="youtube" icon = {faYoutube}></FontAwesomeIcon></a>
           <a href={recipedata.source} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className ="google" icon = {faGoogle}></FontAwesomeIcon></a>
           </div>    
-          <a href="/#start"><FontAwesomeIcon className="backbutton" icon = {faArrowLeft}></FontAwesomeIcon></a>
+          <Link smooth to="/#start"><FontAwesomeIcon className="backbutton" icon = {faArrowLeft} onClick={() => this.goBack()}></FontAwesomeIcon></Link>
         </div>
         <div className="bookheader">
         <div className="bookheader-content">
@@ -165,6 +172,7 @@ export class Book extends Component{
           <p>{recipedata.instructions}</p></div>)}
           <hr/>
       <Restaurants restaurants={this.props.restaurants}/>
+      <Link smooth to="/#start"><FontAwesomeIcon className="backbutton" icon = {faArrowLeft} onClick={() => this.goBack()}></FontAwesomeIcon></Link>
       </div>
     )
   }
