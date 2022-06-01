@@ -33,6 +33,14 @@
     color: black;
 }
 
+.result__cta-content h4 {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 45px;
+    font-weight: 800;
+    color: black;
+}
+
 .result__cta-btn {
     display: flex;
     justify-content: center;

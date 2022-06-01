@@ -29,9 +29,8 @@
     width: 70rem;
     max-width: 100rem;
     overflow-x: scroll;
-
+    overflow-y: hidden;
 }
-
 
 .g__blog-container_groupA {
     flex: 0.75;

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 const Button2 = styled.button`
-width:auto;
+width:10%;
 height:10%;
 background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
 border: 0;
@@ -21,7 +21,7 @@ line-height: 2.5;
 outline: transparent;
 margin-top:5%;
 margin-bottom:5%;
-padding: 0 10rem;
+padding: 0rem 8rem;
 text-align: center;
 text-decoration: none;
 transition: box-shadow .2s ease-in-out;
@@ -101,7 +101,7 @@ export class Book extends Component{
             <Button2 onClick = {()=> this.setState({instructions: false})}> Instructions</Button2>
           </div>
         </div>
-        {this.state.instructions &&(<div className="bookheader-content">
+        {this.state.instructions &&(<div className="bookheader-content-table">
       <table>
         <tbody>
             <tr>

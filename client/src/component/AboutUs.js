@@ -1,58 +1,74 @@
 import React, {Component} from 'react';
 import './aboutus.css'
-import profileImg from '../images/pizza1.jpeg'
+import Footer from './footer'; 
+import Akshay from '../images/akshay.jpeg'
+import Anish from '../images/anish.jpeg'
+import Sahil from '../images/sahil.jpg'
+import Viraj from '../images/viraj.jpg'
 
 export default class AboutUs extends Component{
     render(){
         return(
             <>
+            <div className='aboutus'>
                 <div className="about-section">
-                    <h1>About Us Page</h1>
-                    <p>Some text about who we are and what we do.</p>
-                    <p>Resize the browser window to see that this page is responsive by the way.</p>
+                    <h1>About Plat De Jour</h1>
+                    <p>Plat De Jour is an AI-powered food image recognition tool that takes an image as input and provides a recipe along with the ingredients and a list of restaurants that serve the food item. Our image-to-recipe generation system is built upon state-of-the-art deep learning techniques and aims to promote AI in the food and healthcare industry.</p>
                     </div>
+                    <h1>Our Team</h1>
+                    <div className='temp'>
+                        <div>
+                            <div className="card">
+                            <img className='img' src={Akshay} alt="Jane" />
+                            <div className="container">
+                                <h2>Akshay Jain</h2>
+                                <p className="title">Full Stack Engineer</p>
+                                <p className='email'><u>akshayj2@uci.edu </u></p>
+                                <p><button className="button">Contact</button></p>
+                            </div>
+                            </div>
+                        </div>
 
-                    <h2>Our Team</h2>
-                    <div className="row">
-                    <div className="column">
-                        <div className="card">
-                        <img src={profileImg} alt="Jane" />
-                        <div className="container">
-                            <h2>Jane Doe</h2>
-                            <p className="title">CEO & Founder</p>
-                            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                            <p>jane@example.com</p>
-                            <p><button className="button">Contact</button></p>
+                        <div>
+                            <div className="card">
+                            <img className='img' src={Anish} alt="Jane" />
+                            <div className="container">
+                                <h2>Anish Punamiya</h2>
+                                <p className="title">Backend Developer</p>
+                                
+                                <p className='email'><u>apunamiy@uci.edu </u> </p>
+                                <p><button className="button">Contact</button></p>
+                            </div>
+                            </div>
                         </div>
-                        </div>
-                    </div>
 
-                    <div className="column">
-                        <div className="card">
-                        <img src={profileImg} alt="Jane" />
-                        <div className="container">
-                            <h2>Mike Ross</h2>
-                            <p className="title">Art Director</p>
-                            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                            <p>mike@example.com</p>
-                            <p><button className="button">Contact</button></p>
+                        <div >
+                            <div className="card">
+                            <img className='img' src={Sahil} alt="Jane" />
+                            <div className="container">
+                                <h2>Sahil Jain</h2>
+                                <p className="title">ML Engineer</p>
+                                <p className='email'> <u>sahilj2@uci.edu </u></p>
+                                <p><button className="button">Contact</button></p>
+                            </div>
+                            </div>
                         </div>
+                        
+                        <div>
+                            <div className="card">
+                            <img className='img' src={Viraj} alt="Jane" />
+                            <div className="container">
+                                <h2>Viraj Shah</h2>
+                                <p className="title">Cloud Engineer</p>
+                                <p className='email'> <u>shahvp@uci.edu</u></p>
+                                <p><button className="button">Contact</button></p>
+                            </div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div className="column">
-                        <div className="card">
-                        <img src={profileImg} alt="Jane" />
-                        <div className="container">
-                            <h2>John Doe</h2>
-                            <p className="title">Designer</p>
-                            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                            <p>john@example.com</p>
-                            <p><button className="button">Contact</button></p>
-                        </div>
-                        </div>
-                    </div>
                 </div>
+               
+            </div>
+            <Footer/>
             </>
         )
     }

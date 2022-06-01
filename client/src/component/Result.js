@@ -67,10 +67,15 @@ export default class Result extends Component{
     return(
       <div className="result__cta" id="results">
       {!this.state.showBook && (<div className="result__cta-content">
-        <h3>Our AI Model informed us, It's our favorite dish - {this.state.foodImage}, Confidence Score - {this.state.confidence}</h3>
+        {
+          this.state.confidence < 0.90 ? 
+          <><h3>You seemed to have uploaded an incorrect image.</h3><h4> Our Model predicted it to be - {this.state.foodImage} with Confidence Score - {this.state.confidence}</h4></>
+          :
+          <><h3>Our AI Model informed us, It's our favorite dish - {this.state.foodImage}</h3><h4>[Confidence Score - {this.state.confidence}]</h4></>
+        }
       </div>)}
       {!this.state.showBook && (<div className="result__cta-btn">
-        <a href="/#results"><button onClick = {() => this.getContent()} className={this.state.confidence <= 0.2 ? 'disabledRecipe' : 'enabledRecipe'} disabled={this.state.confidence <= 0.2 ? true : false} type="button">Get Recipe</button></a>
+        <a href="/#results"><button onClick = {() => this.getContent()} className={this.state.confidence < 0.90 ? 'disabledRecipe' : 'enabledRecipe'} disabled={this.state.confidence < 0.90 ? true : false} type="button">Get Recipe</button></a>
       </div>)}
       {this.state.showBook && <Book {...this.state}/>}
       </div>

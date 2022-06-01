@@ -26,6 +26,7 @@ export class Card extends Component{
     reader.onload = () => {
       console.log('Loading Result')
       if(reader.readyState === 2){
+        that.props.setState({knowButton: true});
         let image = reader.result.split(",")[1]
         that.setState({profileImg: reader.result, loading: true})
         const requestOptions = {
@@ -38,7 +39,7 @@ export class Card extends Component{
           .then(response => response.json())
           .then(function(jsonString){
             that.setState({loading: false})
-            that.props.setState({image: jsonString.body.category, activeNow: 'knowFood', knowButton: false});
+            that.props.setState({image: jsonString.body.category, confidence: jsonString.body.confidence, activeNow: 'knowFood', knowButton: false});
             console.log(jsonString);
           })
       }

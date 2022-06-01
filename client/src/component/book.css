@@ -3,18 +3,27 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
+  width: 100%;
+  height: 100%
 }
 
 .bookheader_missing {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   
 }
 
 .bookheader-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+}
+
+.bookheader-content-table{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,10 +49,11 @@
   color: black;
   font-family:var(--font-family) ;
 }
+
 table {
   border: 2px solid black;
-  width: 40rem;
-  height: 30rem;
+  width: 50%;
+  height: 50%;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 20px;
@@ -238,6 +248,7 @@ td {
       font-size: 12px;
       line-height: 16px;
   }
+  
 }
 /* *{
     margin: 0;
