@@ -1,14 +1,14 @@
 .g__blog {
     display: flex;
     flex-direction: row; 
-    padding: 0% 0%;
+    padding: 0% 0% 0% 0%;
     outline: auto;
     
 }
 .g__blog-heading {
     width: 100%;
     text-align: left;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     color: var(--font-family);
 }
 
@@ -26,8 +26,8 @@
     scroll-behavior: smooth;
     padding: 1rem;
     margin: 1rem;
-    width: 70rem;
-    max-width: 100rem;
+    width: 90rem;
+    max-width: 120rem;
     overflow-x: scroll;
     overflow-y: hidden;
 }

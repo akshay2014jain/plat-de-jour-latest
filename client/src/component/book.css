@@ -1,10 +1,32 @@
+.book{
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+  background: var(--gradient-bar)
+}
+.hello{
+  text-align: center ;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 62px;
+  line-height: 75px;
+  color: whitesmoke;
+}
+
 .bookheader {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 100%;
-  height: 100%
+}
+
+.gradient__text_copy{
+    color: black;
+    background-clip: text;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .bookheader_missing {
@@ -12,7 +34,6 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
 }
 
 .bookheader-content {
@@ -36,38 +57,57 @@
   color:red;
   padding: 0rem 1rem 1rem;
   cursor: pointer;
-  align-items: center;
-  padding-left: 70rem;
+  align-items: right;
+
 }
 .google{
   font-size:48px;
   color:green;
   padding: 0rem 0rem 1rem;
   cursor: pointer;
+  align-items: right;
 }
+
 .tablex{
   color: black;
   font-family:var(--font-family) ;
 }
 
 table {
-  border: 2px solid black;
-  width: 50%;
-  height: 50%;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
   align-items: center;
-  margin-bottom: 5rem;
-}
-  
-th {
-  border-bottom: 1px solid black;
-}
-  
-td {
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  margin-left: 4rem;
+}
+
+.references{
+  padding: 1rem 1rem 0 0;
+}
+
+.awesome_links{
+  float: right;
+}
+
+.backbutton{
+  font-size:48px;
+  color:black;
+  padding: 0rem 1rem 1rem;
+  cursor: pointer;
+}
+
+th{
+  border: 1px solid black;
+}
+
+hr{
+  margin: 1.5rem 0 1.5rem 0;
+  border-top: 0.5px solid lightgray;
 }
 
 .image-upload2{
@@ -102,7 +142,9 @@ td {
 
 .bookheader-content p {
   font-family: var(--font-family);
-  font-weight: 300;
+  width: 70%;
+  height: 50%;
+  font-weight: 600;
   font-size: 20px;
   line-height: 28px;
   color: black;
@@ -110,6 +152,7 @@ td {
   padding: auto;
   align-items: center;
   padding: 1rem 3rem 3rem 1rem;
+  margin-bottom: 5rem;
 }
 
 .bookheader-content__input {
@@ -194,6 +237,10 @@ td {
 .bookheader-image img {
   width: 20%;
   height: 20%;
+}
+
+.book_css{
+  background: var(--gradient-bar);
 }
 
 @media screen and (max-width: 1050px) {

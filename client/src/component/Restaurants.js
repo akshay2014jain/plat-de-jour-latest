@@ -3,7 +3,6 @@ import Article from './Article';
 import './restaurants.css';
 
 export class Restaurants extends Component{
-
   render(){
     const restaurants = this.props.restaurants
     

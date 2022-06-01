@@ -4,14 +4,13 @@ import styled from "styled-components";
 import Restaurants from './Restaurants'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Button2 = styled.button`
-width:10%;
-height:10%;
 background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
 border: 0;
 border-radius: 8px;
-color: #FFFFFF;
+color: black;
 cursor: pointer;
 display: inline-block;
 font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -89,9 +88,14 @@ export class Book extends Component{
       source : this.props.recipe["strSource"]
     }
     return (
-      <div>
-        <a href={recipedata.youtube} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="youtube" icon = {faYoutube}></FontAwesomeIcon></a>
-        <a href={recipedata.source} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className ="google" icon = {faGoogle}></FontAwesomeIcon></a>
+      <div className='book_css'>
+        <div className='references'>
+          <div className='awesome_links'>
+          <a href={recipedata.youtube} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="youtube" icon = {faYoutube}></FontAwesomeIcon></a>
+          <a href={recipedata.source} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className ="google" icon = {faGoogle}></FontAwesomeIcon></a>
+          </div>    
+          <a href="/#start"><FontAwesomeIcon className="backbutton" icon = {faArrowLeft}></FontAwesomeIcon></a>
+        </div>
         <div className="bookheader">
         <div className="bookheader-content">
         <img className="image-upload2" src = {recipedata.image} alt="recipe"/>
@@ -101,12 +105,15 @@ export class Book extends Component{
             <Button2 onClick = {()=> this.setState({instructions: false})}> Instructions</Button2>
           </div>
         </div>
-        {this.state.instructions &&(<div className="bookheader-content-table">
-      <table>
+        {this.state.instructions &&(<table className='gradient__text_copy'>
         <tbody>
             <tr>
               <th className="tablex"> Ingredients </th>
               <th className="tablex"> Quantity </th>
+            </tr>
+            <tr>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
             </tr>
             <tr>
               <th> {recipedata.Ingredient1} </th>
@@ -153,13 +160,10 @@ export class Book extends Component{
               <th>{recipedata.Measure11}</th>
             </tr>
           </tbody>
-        </table>
-        </div>)}
+        </table>)}
         {!this.state.instructions && (<div className="bookheader-content">
-
           <p>{recipedata.instructions}</p></div>)}
-      <div className="bookheader_missing">
-      </div>
+          <hr/>
       <Restaurants restaurants={this.props.restaurants}/>
       </div>
     )
