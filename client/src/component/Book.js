@@ -29,7 +29,7 @@ user-select: none;
 -webkit-user-select: none;
 touch-action: manipulation;
 white-space: nowrap;
-margin-inline-end: 8rem;
+margin-inline-end: 1rem;
 `;
 
 export class Book extends Component{

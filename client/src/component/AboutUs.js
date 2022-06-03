@@ -51,7 +51,7 @@ export default class AboutUs extends Component{
                                 <p className='email'><u>akshayj2@uci.edu </u></p>
                                 <div className='fonts'>
                                 <p><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></p>
-                                <p><FontAwesomeIcon className="github" icon = {faGithub}></FontAwesomeIcon></p>
+                                <p><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></p>
                                 </div>
                                 
                             </div>
@@ -68,7 +68,7 @@ export default class AboutUs extends Component{
                                 <p className='email'><u>apunamiy@uci.edu </u> </p>
                                 <div className='fonts'>
                                 <p><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></p>
-                                <p><FontAwesomeIcon className="github" icon = {faGithub}></FontAwesomeIcon></p>
+                                <p><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></p>
                                 </div>
                             </div>
                             </div>
@@ -83,7 +83,7 @@ export default class AboutUs extends Component{
                                 <p className='email'> <u>sahilj2@uci.edu </u></p>
                                 <div className='fonts'>
                                 <p><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></p>
-                                <p><FontAwesomeIcon className="github" icon = {faGithub}></FontAwesomeIcon></p>
+                                <p><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></p>
                                 </div>
                             </div>
                             </div>
@@ -95,10 +95,10 @@ export default class AboutUs extends Component{
                             <div className="container">
                                 <h2 className='gradient__text__aboutus'>Viraj Shah</h2>
                                 <p className="titlex">Cloud Engineer</p>
-                                <p className='email'> <u>shahvp@uci.edu</u></p>
+                                <p className='email'> <u >shahvp@uci.edu</u></p>
                                 <div className='fonts'>
                                 <p><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></p>
-                                <p><FontAwesomeIcon className="github" icon = {faGithub}></FontAwesomeIcon></p>
+                                <p><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></p>
                                 </div>
                             </div>
                             </div>
