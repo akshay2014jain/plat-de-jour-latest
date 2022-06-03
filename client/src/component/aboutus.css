@@ -1,14 +1,118 @@
+.gradient__bg {
+    background:-moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+}
+
+.gradient__text__aboutus {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    align-items: center;
+    font-family: var(--font-family);
+    padding-bottom: 2rem;
+}
+
+.img__description {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    color: black;
+    visibility: hidden;
+    opacity: 0;
+    /* transition effect. not necessary */
+    transition: opacity .2s, visibility .2s;
+}
+.img__wrap:hover .img__description {
+    visibility: visible;
+    opacity: 1;
+}
+
+.para{
+    color: white;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+}
+
+.react{
+    color: lightblue;
+    font-size:48px;
+    padding: 0rem 1rem 1rem;
+    cursor: pointer;
+    align-items: right;
+}
+
+.python{
+    color: rgb(63, 80, 86);
+    font-size:48px;
+    padding: 0rem 1rem 1rem;
+    cursor: pointer;
+    
+    
+}
+
+.docker{
+    color: blue;
+    font-size:48px;
+    padding: 0rem 1rem 1rem;
+    cursor: pointer;
+    align-items: right;
+}
+
+.nodejs{
+    color: green;
+    font-size:48px;
+    padding: 0rem 1rem 1rem;
+    cursor: pointer;
+    align-items: right;
+}
+
+.github{
+    color: white;
+    font-size:48px;
+    padding: 0rem 1rem 1rem;
+    cursor: pointer;
+    align-items: right;
+}
+
+.html5{
+    color: orange;
+    font-size:48px;
+    padding: 0rem 1rem 1rem;
+    cursor: pointer;
+    align-items: right;
+}
+.fonts{
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+}
+
 
 .aboutus {
     padding-top: 4.5rem;
     padding-right: 0rem;
-    margin-left: 0;
-    margin-right: 0;
     width: fit-content;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(#e66465, #9198e5);
     max-width: fit-content;
     align-items: center;
     justify-content: center ;
@@ -38,12 +142,14 @@
     box-shadow: 0 0.5rem 0.rem 0 rgba(0, 0, 0, 0.2);
     width: 50%;
     height: 30%;
+    padding-top: 0rem;
 }
 
 .img{
-    width: 275px;
-    height: 275px;
+    width: 250px;
+    height: 250px;
     padding: 1rem 1rem 1rem 1rem;
+    opacity: 50%;
 }
 
 .about-section {
@@ -51,8 +157,9 @@
     text-align: center;
     background-color:  linear-gradient(#e66465, #9198e5);
     color: black;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     font-family: var(--font-family);
+    padding-bottom: 2rem;
 }
 
 .container {
@@ -61,33 +168,36 @@
     margin: 10px;
 }
 
-
-
-.title {
-    color: black;
+.titlex {
     font-family: var(--font-family);
     font-size: 14px;
     font-weight: 600;
     line-height: 35px;
-    color: black;
+    color: white;
 }
 
 .email{
-    color: darkblue;
+    color: lightblue;
     font-family: var(--font-family);
     font-size: 14px;
     font-weight: 600;
     line-height: 35px;
     cursor: pointer;
 }
+.linkedin{
+    color: goldenrod;
+    font-size:48px;
+    padding: 0rem 1rem 1rem;
+    cursor: pointer;
+    align-items: right;
+}
 
 .button {
     border: none;
-    
     display: inline-block;
     padding: 1rem;
     color: white;
-    background-color: #000;
+    background-color: #AE67FA;
     text-align: center;
     cursor: pointer;
     width: 100%;

@@ -13,7 +13,7 @@ border: 0;
 border-radius: 8px;
 color: black;
 cursor: pointer;
-display: inline-block;
+display: inline-start;
 font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 font-size: 16px;
 font-weight: 500;
@@ -29,6 +29,7 @@ user-select: none;
 -webkit-user-select: none;
 touch-action: manipulation;
 white-space: nowrap;
+margin-inline-end: 8rem;
 `;
 
 export class Book extends Component{

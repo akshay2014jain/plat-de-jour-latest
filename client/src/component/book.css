@@ -36,14 +36,22 @@
   text-align: center;
 }
 
+
+
 .bookheader-content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  text-align: center;
-}
+  text-align: left;
 
+}
+.bookheader-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
 .bookheader-content-table{
   display: flex;
   justify-content: center;

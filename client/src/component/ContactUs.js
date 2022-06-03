@@ -41,16 +41,56 @@ const ContactUs = () => {
         console.log(`Name: ${name}, Email: ${email}, Message: ${message}`)
     }
 
+    const StarRating = () => {
+        const [rating, setRating] = useState(0);
+        return (
+          <div className="star-rating">
+            {[...Array(5)].map((star, index) => {
+              index += 1;
+              return (
+                <button
+                  type="button"
+                  key={index}
+                  className={index <= rating ? "on" : "off"}
+                  onClick={() => setRating(index)}
+                >
+                  <span className="star">&#9733;</span>
+                </button>
+              );
+            })}
+          </div>
+        );
+      };
+
     return (
-        <div className="contact-section" >
+        <div>
             <form >
                 <div className='contactus'>
+                <h1 className="gradient__text">Feedback Form</h1>
                     <div className="contact-section" >
-                        <h1 className="gradient__text">Feedback Form</h1>
                         <p className="gradient__text">We'd love to hear from you </p>
                     </div>
-                    
-                    
+                    <div className="contact-section" >
+                    <div className='stars'>
+                    <h3 className="gradient__text"> How was your expierence with our interface</h3>
+                    <StarRating /></div></div>
+
+                    <div className="contact-section" >
+                    <div className='stars'>
+                    <h3 className="gradient__text"> How was your expierence with our food predicition </h3>
+                    <StarRating /></div></div>
+
+                    <div className="contact-section" >
+                    <div className='stars'>
+                    <h3 className="gradient__text"> How was your expierence with our recipe predicition </h3>
+                    <StarRating /></div></div>
+
+                    <div className="contact-section" >
+                    <div className='stars'>
+                    <h3 className="gradient__text"> How was your expierence with our restaurants predicition </h3>
+                    <StarRating /></div></div>
+
+
                     <div className="contact-section">
                     <h2 className="gradient__text">Your Name </h2>
                         <input

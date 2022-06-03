@@ -16,8 +16,8 @@ padding: 10px 60px;
 border-radius: 5px;
 margin: 10px 0px;
 cursor: pointer;
-visibility = "hidden";
 font-family : var(--font-family);
+width:18rem;
 `;
 
 export default class Home extends Component{
