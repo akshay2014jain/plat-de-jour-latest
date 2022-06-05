@@ -40,7 +40,7 @@ export class Card extends Component{
           .then(function(jsonString){
             that.setState({loading: false})
             let confidence_val = (jsonString.body.confidence * 100).toFixed(2);
-            that.props.setState({image: jsonString.body.category, confidence: confidence_val, activeNow: 'knowFood', knowButton: false});
+            that.props.setState({image: jsonString.body.category, mealDb_image: jsonString.body.meal, confidence: confidence_val, activeNow: 'knowFood', knowButton: false});
             console.log(jsonString);
           })
       }

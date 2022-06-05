@@ -11,6 +11,7 @@ export default class Result extends Component{
     this.state = {
       showBook: false,
       foodImage: this.props.image,
+      mealDb_image: this.props.mealDb_image,
       confidence: this.props.confidence,
       recipe: '',
       restaurants: null,
@@ -28,7 +29,7 @@ export default class Result extends Component{
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({s: that.state.foodImage}),
+      body: JSON.stringify({s: that.state.mealDb_image}),
     };
     setTimeout(() => fetch("/getMealDb", requestOptions)
       .then(response => response.json())

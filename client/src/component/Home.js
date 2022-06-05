@@ -28,6 +28,7 @@ export default class Home extends Component{
             activeNow: 'home',
             knowButton: true,
             image: '',
+            mealDb_image: '',
             confidence: 100,
             lat: '',
             lon: ''
