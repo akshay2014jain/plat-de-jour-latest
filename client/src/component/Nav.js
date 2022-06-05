@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './navbar.css';
+import './nav.css';
 import Logo from '../images/logo.png'
 import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';

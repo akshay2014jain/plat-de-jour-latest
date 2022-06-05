@@ -2,7 +2,7 @@ import './App.css';
 import './index.css';
 import {Component} from "react";
 import {Helmet} from "react-helmet";
-import Navbar from './component/Navbar';
+import Navbar from './component/Nav';
 
 export default class App extends Component{
 
