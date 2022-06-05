@@ -15,11 +15,7 @@ export class Navbar extends Component{
       toggleMenu: true
     }
   }
-
-  setToggleMenu(value){
-    this.state = value;
-  }
-
+  
   render(){
     return (
       <Router>
