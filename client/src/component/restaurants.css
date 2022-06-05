@@ -8,15 +8,14 @@
 .g__blog-heading {
     width: 100%;
     text-align: left;
-    margin-bottom: 3rem;
     color: var(--font-family);
 }
 
 .g__blog-heading h1 {
-    font-size: 62px;
-    line-height: 75px;
+    font-size: 50px;
+    line-height: 40px;
     font-family: var(--font-family);
-    font-weight: 800;
+    font-weight: 600;
     color: var(--font-family);
 }
 
@@ -24,8 +23,6 @@
     display: flex;
     flex-direction: row;
     scroll-behavior: smooth;
-    padding: 1rem;
-    margin: 1rem;
     width: 90rem;
     max-width: 120rem;
     overflow-x: scroll;

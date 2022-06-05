@@ -4,8 +4,8 @@ import { HashLink as Link } from 'react-router-hash-link';
 import './home.css'
 import Card  from './Card';
 import Header from './Header';
-import Feature from './feature';
-import Footer from './footer';
+import Feature from './Feature';
+import Footer from './Footer';
 import Result from './Result';
 
 const Button = styled.button`

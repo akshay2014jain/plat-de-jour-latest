@@ -115,7 +115,7 @@ th{
 
 hr{
   margin: 1.5rem 0 1.5rem 0;
-  border-top: 0.5px solid lightgray;
+  border-top: 0.5px solid #c0bdbd;
 }
 
 .image-upload2{
@@ -142,7 +142,7 @@ hr{
   justify-content: left;
   text-align: left;
   font-family: var(--font-family);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 50px;
   line-height: 75px;
   letter-spacing: -0.04em;
@@ -254,10 +254,6 @@ hr{
 @media screen and (max-width: 1050px) {
   .bookheader {
       flex-direction: column;
-  }
-
-  .bookheader-content {
-      margin: 0 0 3rem;
   }
 }
 

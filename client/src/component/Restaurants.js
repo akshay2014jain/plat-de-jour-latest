@@ -9,7 +9,7 @@ export class Restaurants extends Component{
     return(
       <div id="blog">
         <div className="g__blog-heading">
-          <h1>Restaurants near you</h1>
+          <h1>Restaurants near you : </h1>
         <div className="g__blog-container">
         {
         restaurants !== null && 

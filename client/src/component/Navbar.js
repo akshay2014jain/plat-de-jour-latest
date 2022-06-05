@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
-import './Navbar.css';
+import './navbar.css';
 import Logo from '../images/logo.png'
 import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 import Home from './Home';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
-
-
-
 
 export class Navbar extends Component{
 
