@@ -1,5 +1,5 @@
 import React from 'react';
-import './feature.css';
+import '../css/feature.css';
 import Feat from './Feat.js';
 import { HashLink as Link } from 'react-router-hash-link';
 

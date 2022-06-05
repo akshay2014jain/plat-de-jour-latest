@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../images/logo.png';
-import './footer.css';
+import '../css/footer.css';
 
 const Footer = () => (
   <div className="g__footer section__padding" id="contact">

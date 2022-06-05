@@ -1,5 +1,5 @@
 import React , {Component} from 'react'
-import './card.css';
+import '../css/card.css';
 import { css } from "@emotion/react";
 import startImage from '../images/try.jpeg';
 import PacmanLoader from "react-spinners/PacmanLoader";

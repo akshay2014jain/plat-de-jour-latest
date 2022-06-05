@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled from "styled-components";
 import { HashLink as Link } from 'react-router-hash-link';
-import './home.css'
+import '../css/home.css'
 import Card  from './Card';
 import Header from './Header';
 import Feature from './Feature';

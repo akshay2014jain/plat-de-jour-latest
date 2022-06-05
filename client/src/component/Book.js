@@ -1,5 +1,5 @@
 import React , {Component} from 'react'
-import './book.css';
+import '../css/book.css';
 import styled from "styled-components";
 import Restaurants from './Restaurants'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -1,5 +1,5 @@
 import React from 'react';
-import './feat.css';
+import '../css/feat.css';
 
 const Feat = ({ title, text }) => (
   <div className="g__features-container__feature">
