@@ -6,8 +6,23 @@ import { HashLink as Link } from 'react-router-hash-link';
 import Home from './Home';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
+import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+
+
+
 
 export class Navbar extends Component{
+
+  constructor(props){
+    super(props)
+    this.state = {
+      toggleMenu: true
+    }
+  }
+
+  setToggleMenu(value){
+    this.state = value;
+  }
 
   render(){
     return (
