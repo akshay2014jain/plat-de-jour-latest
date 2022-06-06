@@ -1,5 +1,4 @@
-import './App.css';
-import './index.css';
+import './css/app.css';
 import {Component} from "react";
 import {Helmet} from "react-helmet";
 import Navbar from './component/Navbar';
@@ -11,11 +10,6 @@ export default class App extends Component{
     fetch("/getData")
       .then(response => response.json())
       .then(response => console.log(response.body))
-
-      navigator.geolocation.getCurrentPosition(function(position) {
-        console.log(position.coords.latitude)
-        console.log(position.coords.longitude)
-      });
   }
 
   render(){

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Footer from './footer';
-import './aimodel.css' ;
+import '../css/aimodel.css' ;
 import startImage from '../images/try.jpeg';
 
 export default class AImodel extends Component{

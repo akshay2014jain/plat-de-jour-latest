@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    padding: 7rem 2rem 6rem 3rem;
+    padding: 9rem 2rem 6rem 3rem;
 }
 
 .g__features-heading {
@@ -24,12 +24,12 @@
 
 .g__features-heading p {
     color: var(--color-subtext);
-    font-size: 16px;
-    line-height: 30px;
-    font-weight: 500;
+    font-size: 25px;
+    line-height: 80px;
+    font-weight: 600;
     font-family: var(--font-family);
-
     margin-top: 2rem;
+    margin-left: 0.5rem;
 }
 
 .g__features-container {
@@ -38,6 +38,10 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+}
+
+.underline{
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 990px) {

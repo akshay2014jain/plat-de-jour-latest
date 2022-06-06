@@ -1,5 +1,5 @@
 import React , {Component} from 'react'
-import './card.css';
+import '../css/card.css';
 import { css } from "@emotion/react";
 import startImage from '../images/try.jpeg';
 import PacmanLoader from "react-spinners/PacmanLoader";
@@ -41,7 +41,6 @@ export class Card extends Component{
             that.setState({loading: false})
             let confidence_val = (jsonString.body.confidence * 100).toFixed(2);
             that.props.setState({image: jsonString.body.category, mealDb_image: jsonString.body.meal, confidence: confidence_val, activeNow: 'knowFood', knowButton: false});
-            console.log(jsonString);
           })
       }
     }
@@ -54,8 +53,8 @@ export class Card extends Component{
       <div className="cardheader" id="start">
       <div className="cardheader-content">
       <h1 className="gradient__text">What's Cooking?</h1>
-        <p>Upload an Image & </p>
-        <p>We'll pick the Ideal Recipe for you!</p>
+        <p>Snap an image &</p>
+        <p>We will find the ideal recipe for you !</p>
         </div>
       <div className="cardheader-content__people">
         <img src= {profileImg} alt="profile"/>
@@ -67,7 +66,7 @@ export class Card extends Component{
             <>
               <label htmlFor="input" className="image-upload">
                 <i className="material-icons"> add_photo_alternate </i>
-                  Choose your food photo 
+                  Select food image 
               </label>
             </>
             :

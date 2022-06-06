@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component} from "react";
-import './result.css';
+import '../css/result.css';
 import Book from './Book';
 import { HashLink as Link } from 'react-router-hash-link';
 import ProgressBar from 'react-bootstrap/ProgressBar';

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './aboutus.css'
-import Footer from './footer'; 
+import '../css/aboutus.css'
+import Footer from './Footer'; 
 import Akshay from '../images/akshay.jpeg'
 import Anish from '../images/anish.jpeg'
 import Sahil from '../images/sahil.jpg'

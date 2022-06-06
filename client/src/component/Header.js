@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import '../css/header.css';
 import Food from '../images/food.png';
 
 const Header = () => (

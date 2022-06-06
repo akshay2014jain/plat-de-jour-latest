@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './contactus.css'
-import Footer from './footer';
+import '../css/contactus.css'
+import Footer from './Footer';
 import styled from "styled-components";
 
 
