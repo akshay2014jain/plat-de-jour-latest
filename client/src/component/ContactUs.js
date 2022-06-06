@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../css/contactus.css'
 import Footer from './Footer';
 import styled from "styled-components";
+import emailjs from '@emailjs/browser';
 
 
 const Button2 = styled.button`
@@ -18,8 +19,7 @@ font-size: 16px;
 font-weight: 500;
 line-height: 2.5;
 outline: transparent;
-margin-top:5%;
-margin-bottom:5%;
+margin-bottom: 2rem;
 padding: 0rem 0rem;
 text-align: center;
 text-decoration: none;
@@ -33,41 +33,74 @@ white-space: nowrap;
 
 const ContactUs = () => {
     
-    const [fname, setFname] = useState('')
-    const [lname, setLname] = useState('')
-    const [pnumber, setPNumber] = useState('')
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
+    const [rating1, setRating1] = useState(0);
+    const [rating2, setRating2] = useState(0);
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(`Name: ${fname}, Email: ${email}, Message: ${message}`);
-        alert("Thank you for your valuable feedback! We will get in touch");
+        if(email.trim() !== "")
+            sendFeedback({to_name: name, reply_to: email});
+        else
+            alert("Kindly fill in the relevant details before submitting the feedback!");
     }
+    
+    const sendFeedback = (variables) => {
+        alert("Thank you for your valuable feedback! We will get in touch");
+        // emailjs.send(
+        //     'service_v7zu0xx',
+        //     'template_4ozdfr4',
+        //     variables,
+        //     'uwzBVhypyZE_VPVYy'
+        //     ).then(res => {
+        //         alert("Thank you for your valuable feedback! We will get in touch");
+        //     })
+        //     .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+    };
 
-    const StarRating = () => {
-        const [rating, setRating] = useState(0);
+    const StarRating1 = () => {
         return (
-          <div className="star-rating">
-            {[...Array(5)].map((star, index) => {
-              index += 1;
-              return (
-                <button
-                  type="button"
-                  key={index}
-                  className={index <= rating ? "on" : "off"}
-                  onClick={() => setRating(index)}>
-                  <span className="star">&#9733;</span>
-                </button>
-              );
-            })}
-          </div>
+            <div className="star-rating">
+                {[...Array(5)].map((star, index) => {
+                    index += 1;
+                    return (
+                        <button
+                            type="button"
+                            key={index}
+                            className={index <= rating1 ? "on" : "off"}
+                            onClick={() => setRating1(index)}>
+                            <span className="star">&#9733;</span>
+                        </button>
+                    );
+                })}
+            </div>
         );
-      };
+    };
+
+    const StarRating2 = () => {
+        return (
+            <div className="star-rating">
+                {[...Array(5)].map((star, index) => {
+                    index += 1;
+                    return (
+                        <button
+                            type="button"
+                            key={index}
+                            className={index <= rating2 ? "on" : "off"}
+                            onClick={() => setRating2(index)}>
+                            <span className="star">&#9733;</span>
+                        </button>
+                    );
+                })}
+            </div>
+        );
+    };
 
     return (
-        <div className="contactus">
-            <form >
+        <div id="contactus">
+            <form className="contactus">
                 <div >
                 <h1 className="gradient__text">Feedback Form</h1>
                 <br/>
@@ -75,15 +108,15 @@ const ContactUs = () => {
 simply fill out this form and hit complete. Thank you for your feedback!.</p>
                     <br/>
                     <div className="contact-section">
-                    <h2 className="gradient__text">First Name </h2>
+                    <h2 className="gradient__text">Name </h2>
                     <div className="inputz">
                     <input
                             type="text"
-                            placeholder="First name"
-                            name="fname"
-                            value={fname}
+                            placeholder="* Enter name"
+                            name="name"
+                            value={name}
                             onChange={(e) => {
-                                setFname(e.target.value)
+                                setName(e.target.value)
                             }}
                             required
                         />
@@ -91,43 +124,11 @@ simply fill out this form and hit complete. Thank you for your feedback!.</p>
                     </div>
 
                     <div className="contact-section">
-                    <h2 className="gradient__text">Last Name </h2>
-                    <div className="inputz">
-                    <input
-                            type="text"
-                            placeholder="Last name"
-                            name="lname"
-                            value={lname}
-                            onChange={(e) => {
-                                setLname(e.target.value)
-                            }}
-                            required
-                        />
-                    </div>  
-                    </div>
-                    
-                    <div className="contact-section">
-                    <h2 className="gradient__text">Phone Number </h2>
-                    <div className="inputw">
-                    <input
-                            type=""
-                            placeholder="Phone Number"
-                            name="pnumber"
-                            value={pnumber}
-                            onChange={(e) => {
-                                setPNumber(e.target.value)
-                            }}
-                            required
-                        />
-                    </div>
-                    </div>
-
-                    <div className="contact-section">
-                    <h2 className="gradient__text">Your Email </h2>
+                    <h2 className="gradient__text">Email</h2>
                     <div className="inputx">
                         <input
                             type="email"
-                            placeholder="Email"
+                            placeholder="* Enter email"
                             name="email"
                             value={email}
                             onChange={(e) => {
@@ -137,25 +138,14 @@ simply fill out this form and hit complete. Thank you for your feedback!.</p>
                         />
                         </div>
                     </div>
-                    <div className="contact-section">
-                    <h3 className="gradient__text"> Do you want one of our executive to get in touch </h3>
-                        </div>
-                    <div className="contact-section">
-                    <h3 className="yesno">Yes </h3>
-                    <input type="radio" value="Male" name="gender" /> 
-                    <h3 className="yesno">No </h3>
-                    <input type="radio" value="Female" name="gender" /> 
-                    
-                    
-                    </div>
                     
                     <div className="contact-section">
-                    <h2 className="gradient__text">Your Message </h2>
+                    <h2 className="gradient__text">Message </h2>
                     <div className="inputy">
                         <textarea 
-                            rows="12"
-                            cols="40"
-                            placeholder="Your message"
+                            rows="6"
+                            cols="30"
+                            placeholder="* Please enter your message!"
                             name="message"
                             className="message-box"
                             value={message}
@@ -166,22 +156,15 @@ simply fill out this form and hit complete. Thank you for your feedback!.</p>
                         />
                         </div>
                     </div>
+
                     <div className="contact-section" >
                     <div className='stars'>
                     <h3 className="gradient__text"> How was your experience with our interface</h3>
-                    <StarRating /></div></div>
+                    <StarRating1 /></div></div>
                     <div className="contact-section" >
                     <div className='stars'>
                     <h3 className="gradient__text"> How was your experience with our food predicition </h3>
-                    <StarRating /></div></div>
-                    <div className="contact-section" >
-                    <div className='stars'>
-                    <h3 className="gradient__text"> How was your experience with our recipe predicition </h3>
-                    <StarRating /></div></div>
-                    <div className="contact-section" >
-                    <div className='stars'>
-                    <h3 className="gradient__text"> How was your experience with our restaurants predicition </h3>
-                    <StarRating /></div></div>
+                    <StarRating2 /></div></div>
                     <div className="contact-section">
                         <Button2
                             className=""

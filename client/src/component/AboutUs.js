@@ -26,19 +26,12 @@ export default class AboutUs extends Component{
                     
                 <div className='about-section'>
                     <h1 className='gradient__text__aboutus'>Tech Stack</h1>
-                    <FontAwesomeIcon className="react" icon = {faReact}></FontAwesomeIcon>
-                    <FontAwesomeIcon className="python" icon = {faPython}></FontAwesomeIcon>
-                    <FontAwesomeIcon className="nodejs" icon = {faNodeJs}></FontAwesomeIcon>
-                    <FontAwesomeIcon className="docker" icon = {faDocker}></FontAwesomeIcon>
-                    <FontAwesomeIcon className="github" icon = {faGithub}></FontAwesomeIcon>
-                    <FontAwesomeIcon className="html5" icon = {faHtml5}></FontAwesomeIcon>
-                    {/* <div className='about-section_para'>
-                    <p className='para'>React</p>
-                    <p className='para'>React</p>
-                    <p className='para'>React</p>
-                    <p className='para'>React</p>
-                    <p className='para'>React</p>
-                    </div> */}
+                    <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="react" icon = {faReact}></FontAwesomeIcon></a>
+                    <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="python" icon = {faPython}></FontAwesomeIcon></a>
+                    <a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="nodejs" icon = {faNodeJs}></FontAwesomeIcon></a>
+                    <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="docker" icon = {faDocker}></FontAwesomeIcon></a>
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="github" icon = {faGithub}></FontAwesomeIcon></a>
+                    <a href="https://html.spec.whatwg.org/multipage/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="html5" icon = {faHtml5}></FontAwesomeIcon></a>
                 </div>
                     <h1 className='gradient__text__aboutus'>Our Team</h1>
                     <div className='temp'>
@@ -48,10 +41,10 @@ export default class AboutUs extends Component{
                             <div className="container">
                                 <h2 className='gradient__text__aboutus'>Akshay Jain</h2>
                                 <p  className="titlex">Full Stack Engineer</p>
-                                <p className='email'><u >akshayj2@uci.edu </u> </p>
+                                <p className='email'><u>akshayj2@uci.edu </u></p>
                                 <div className='fonts'>
-                                <p><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></p>
-                                <p><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></p>
+                                <p><a href="https://www.linkedin.com/in/akshayjain0105/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></a></p>
+                                <p><a href="https://github.com/akshay2014jain" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></a></p>
                                 </div>
                                 
                             </div>
@@ -67,8 +60,8 @@ export default class AboutUs extends Component{
                                 
                                 <p className='email'><u>apunamiy@uci.edu </u> </p>
                                 <div className='fonts'>
-                                <p><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></p>
-                                <p><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></p>
+                                <p><a href="https://www.linkedin.com/in/anish-punamiya/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></a></p>
+                                <p><a href="https://github.com/AnishPunamiya" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></a></p>
                                 </div>
                             </div>
                             </div>
@@ -82,8 +75,8 @@ export default class AboutUs extends Component{
                                 <p className="titlex">ML Engineer</p>
                                 <p className='email'> <u>sahilj2@uci.edu </u></p>
                                 <div className='fonts'>
-                                <p><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></p>
-                                <p><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></p>
+                                <p><a href="https://www.linkedin.com/in/thesahiljain/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></a></p>
+                                <p><a href="https://github.com/thesahiljain" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></a></p>
                                 </div>
                             </div>
                             </div>
@@ -97,14 +90,13 @@ export default class AboutUs extends Component{
                                 <p className="titlex">Cloud Engineer</p>
                                 <p className='email'> <u >shahvp@uci.edu</u></p>
                                 <div className='fonts'>
-                                <p><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></p>
-                                <p><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></p>
+                                <p><a href="https://www.linkedin.com/in/virajshah11/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></a></p>
+                                <p><a href="https://github.com/virajshah1104" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></a></p>
                                 </div>
                             </div>
                             </div>
                         </div>
                 </div>
-               
             </div>
             <Footer/>
             </div>
