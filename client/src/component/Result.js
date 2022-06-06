@@ -3,8 +3,11 @@ import {Component} from "react";
 import './result.css';
 import Book from './Book';
 import { HashLink as Link } from 'react-router-hash-link';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 export default class Result extends Component{
+
+  
   
   constructor(props){
     super(props)
@@ -64,15 +67,17 @@ export default class Result extends Component{
   render(){
     return(
       <>
+      
       {!this.state.showBook && (<div className="result__cta" id="results">
       {!this.state.showBook && (<div className="result__cta-content">
         {
           this.state.confidence < 90 ? 
-          <><h3 >You seemed to have uploaded an incorrect image.</h3><h4> Our Model predicted it to be - {this.state.foodImage} with Confidence Score - {this.state.confidence} %</h4></>
+          <><h3 >You seemed to have uploaded an incorrect image.</h3><h4> Our Model predicted it to be - {this.state.foodImage} with Confidence Score - {this.state.confidence} %</h4>    </>
           :
-          <><h3>Our AI Model informed us, It's our favorite dish - {this.state.foodImage}</h3><h4>[Confidence Score - {this.state.confidence} %]</h4></>
+          <><h3>Our AI Model informed us, It's our favorite dish - {this.state.foodImage}</h3><h4> We are  {this.state.confidence} % sure!</h4>  </>
         }
       </div>)}
+      
       {!this.state.showBook && (<div className="result__cta-btn">
         <Link smooth to="/#results"><button onClick = {() => this.setshowBook(true)} className={this.state.confidence < 90 ? 'disabledRecipe' : 'enabledRecipe'} disabled={this.state.confidence < 90 ? true : false} type="button">Get Recipe</button></Link>
       </div>)}</div>)}

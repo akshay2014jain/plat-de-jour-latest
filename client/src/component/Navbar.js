@@ -6,6 +6,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 import Home from './Home';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
+import AImodel from './aimodel';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 
 
@@ -36,7 +37,7 @@ export class Navbar extends Component{
             <p><Link smooth to="/#hiw">How It Works</Link></p>
             <p><Link smooth to="/#start">Try Now</Link></p>
             <p><Link smooth to="/about#preview">About the Team</Link></p>
-            <p><Link smooth to="/about">AI Model</Link></p>
+            <p><Link smooth to="/aimodel">AI Model</Link></p>
             <p><Link smooth to="/contact">Contact Us</Link></p> 
           </div>
         </div>
@@ -44,6 +45,7 @@ export class Navbar extends Component{
             <Route exact path='/' element={< Home />}></Route>
             <Route exact path='/about' element={< AboutUs />}></Route>
             <Route exact path='/contact' element={< ContactUs />}></Route>
+            <Route exact path='/aimodel' element={< AImodel />}></Route>
         </Routes>
       </Router>
     )
