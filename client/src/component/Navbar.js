@@ -6,14 +6,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 import Home from './Home';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
-<<<<<<< HEAD
 import AImodel from './aimodel';
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
-
-
-
-=======
->>>>>>> 8381f6ca40fef8c5784dea3416eb563ae49f0aad
 
 export class Navbar extends Component{
 

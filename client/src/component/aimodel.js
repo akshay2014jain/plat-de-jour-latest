@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Footer from './footer';
+import Footer from './Footer.js';
 import '../css/aimodel.css' ;
 import startImage from '../images/try.jpeg';
 
