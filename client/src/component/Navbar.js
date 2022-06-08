@@ -6,7 +6,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 import Home from './Home';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
-import AImodel from './aimodel';
+import AImodel from './Aimodel';
 
 export class Navbar extends Component{
 
@@ -30,7 +30,7 @@ export class Navbar extends Component{
             <p><Link smooth to="/#start">Try Now</Link></p>
             <p><Link smooth to="/about#preview">About the Team</Link></p>
             <p><Link smooth to="/aimodel">AI Model</Link></p>
-            <p><Link smooth to="/contact">Contact Us</Link></p> 
+            <p><Link smooth to="/contact#contactus">Contact Us</Link></p> 
           </div>
         </div>
         <Routes>
