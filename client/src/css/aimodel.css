@@ -35,7 +35,7 @@
 .aimodel{
     padding-top: 4.5rem;
     align-items: center;
-    text-align: center;
+    text-align: center; 
 }
 
 .aimodel h1{
@@ -83,6 +83,7 @@
     justify-content: center;
     align-items: center;
     font-family: var(--font-family);
+    scroll-margin-top: 6rem;
 }
 
 .hditw__ai img{
@@ -109,6 +110,7 @@
     justify-content: center;
     align-items: center;
     font-family: var(--font-family);
+    scroll-margin-top: 5rem;
 }
 
 .dataset__ai img{
@@ -138,6 +140,7 @@
     justify-content: center;
     align-items: center;
     font-family: var(--font-family);
+    scroll-margin-top: 5rem;
 }
 
 .model__ai img{
@@ -168,6 +171,7 @@
     justify-content: center;
     align-items: center;
     font-family: var(--font-family);
+    scroll-margin-top: 5rem;
 }
 .pe_curves__images{
     display: flex;
