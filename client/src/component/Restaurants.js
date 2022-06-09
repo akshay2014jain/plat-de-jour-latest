@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Article from './Article';
 import '../css/restaurants.css';
+import Maps from './Maps';
 
 export class Restaurants extends Component{
 
@@ -19,10 +20,10 @@ export class Restaurants extends Component{
       <div id="blog">
         <div className="g__blog-heading">
           <h1>Restaurants near you : </h1>
-          {/* {
+          {
             restaurants !== null && 
               <Maps restaurants={restaurants} {...this.state}/>
-          } */}
+          }
         <div className="g__blog-container">
         {
         restaurants !== null && 

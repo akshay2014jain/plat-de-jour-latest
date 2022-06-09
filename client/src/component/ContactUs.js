@@ -55,9 +55,20 @@ const ContactUs = () => {
             'aODHx0Vsc_W6hWLf0'
             ).then(res => {
                 alert("Thank you for your valuable feedback! We will get in touch");
+                sendFormUpdate({to_name: name, to_email: email, message: message, rating1: rating1, rating2: rating2});
             })
             .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
     };
+
+    const sendFormUpdate = (variables) => {
+        emailjs.send(
+            'service_v7zu0xx',
+            'template_4ozdfr4',
+            variables,
+            'uwzBVhypyZE_VPVYy'
+        ).then(res => {})
+        .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+    }
 
     const StarRating1 = () => {
         return (
@@ -142,7 +153,7 @@ simply fill out this form and hit complete. Thank you for your feedback!.</p>
                     <h2 className="gradient__text">Message </h2>
                     <div className="inputy">
                         <textarea 
-                            rows="6"
+                            rows="5"
                             cols="30"
                             placeholder="* Please enter your message!"
                             name="message"

@@ -12,6 +12,9 @@
     display: flex;
     flex-direction: row;
 }
+.star-rating{
+    margin-top: -0.5rem;
+}
 
 .g__header-content {
     display: flex;
@@ -65,8 +68,8 @@
 }
 textarea  
 {  
-   font-family:var(--font-family); 
-   font-size: 18px;   
+    font-family:var(--font-family); 
+    font-size: 18px;   
 }
 input{
     line-height: 2em;
