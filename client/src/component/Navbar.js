@@ -29,7 +29,7 @@ export class Navbar extends Component{
             <p><Link smooth to="/#hiw">How It Works</Link></p>
             <p><Link smooth to="/#start">Try Now</Link></p>
             <p><Link smooth to="/about#preview">About the Team</Link></p>
-            <p><Link smooth to="/aimodel">AI Model</Link></p>
+            <p><Link smooth to="/aimodel#background_ai">AI Model</Link></p>
             <p><Link smooth to="/contact#contactus">Contact Us</Link></p> 
           </div>
         </div>
