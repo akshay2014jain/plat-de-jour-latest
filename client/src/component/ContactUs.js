@@ -122,7 +122,7 @@ simply fill out this form and hit complete. Thank you for your feedback!.</p>
                     <div className="inputz">
                     <input
                             type="text"
-                            placeholder="* Enter name"
+                            placeholder=" * Enter name"
                             name="name"
                             value={name}
                             onChange={(e) => {
@@ -138,7 +138,7 @@ simply fill out this form and hit complete. Thank you for your feedback!.</p>
                     <div className="inputx">
                         <input
                             type="email"
-                            placeholder="* Enter email"
+                            placeholder=" * Enter email"
                             name="email"
                             value={email}
                             onChange={(e) => {
@@ -155,14 +155,13 @@ simply fill out this form and hit complete. Thank you for your feedback!.</p>
                         <textarea 
                             rows="5"
                             cols="30"
-                            placeholder="* Please enter your message!"
+                            placeholder=" * Please enter your message!"
                             name="message"
                             className="message-box"
                             value={message}
                             onChange={(e) => {
                                 setMessage(e.target.value)
                             }}
-                            required
                         />
                         </div>
                     </div>
@@ -177,7 +176,7 @@ simply fill out this form and hit complete. Thank you for your feedback!.</p>
                     <StarRating2 /></div></div>
                     <div className="contact-section">
                         <Button2
-                            className=""
+                            className="contact_button"
                             type="submit"
                             onClick={handleSubmit}
                         >Submit                            

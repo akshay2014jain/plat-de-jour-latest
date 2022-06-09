@@ -10,8 +10,13 @@
 }
 
 .contactus p{
-    color: white;
+    color: white;   
 }
+
+.contact_button{
+    margin-left: 42rem;
+}
+
 .stars{
     display: flex;
     flex-direction: row;

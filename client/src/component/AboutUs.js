@@ -41,7 +41,7 @@ export default class AboutUs extends Component{
                             <div className="container">
                                 <h2 className='gradient__text__aboutus'>Akshay Jain</h2>
                                 <p  className="titlex">Full Stack Engineer</p>
-                                <p className='email'> <u >akshayj2@uci.edu </u> </p>
+                                <p className='email'><a href="mailto:akshayj2@uci.edu" target="_blank" rel="noopener noreferrer"><u >akshayj2@uci.edu </u></a></p>
                                 <div className='fonts'>
                                 <p><FontAwesomeIcon className="linkedin" icon = {faLinkedinIn}></FontAwesomeIcon></p>
                                 <p><a href="https://github.com/akshay2014jain" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="githubx" icon = {faGithub}></FontAwesomeIcon></a></p>

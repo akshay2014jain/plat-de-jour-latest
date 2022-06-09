@@ -35,9 +35,15 @@ export class Card extends Component{
           body: JSON.stringify({ image: image}),
         };
 
+        var timeout = setTimeout(function() {
+          alert('Failed to Load Data for this Image');
+          window.location.reload();
+        }, 15000);
+
         fetch("/predict", requestOptions)
           .then(response => response.json())
           .then(function(jsonString){
+            clearTimeout(timeout);
             that.setState({loading: false})
             let confidence_val = (jsonString.body.confidence * 100).toFixed(2);
             console.log(confidence_val)

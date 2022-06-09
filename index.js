@@ -4,7 +4,6 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const cors = require('cors');
 const app = express();
-const timeout = require('connect-timeout')
 app.use(cors());
 app.use(bodyParser.json({limit: '50mb'}));
 
@@ -43,7 +42,7 @@ app.post('/getRestaurants', (req, res) => {
     })
 });
 
-app.post('/predict',timeout('20s'), (req, res) => {
+app.post('/predict', (req, res) => {
     jsonData = req.body
     request.post({url: 'https://lit-fjord-92060.herokuapp.com/predict', json:jsonData}, function (error, response) {
         if (!error && response.statusCode == 200) {
