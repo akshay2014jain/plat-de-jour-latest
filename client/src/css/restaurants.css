@@ -17,6 +17,7 @@
     font-family: var(--font-family);
     font-weight: 600;
     color: var(--font-family);
+    margin-left: 1rem;
 }
 
 .g__blog-container {
@@ -27,6 +28,7 @@
     max-width: 120rem;
     overflow-x: scroll;
     overflow-y: hidden;
+    margin-left: 2rem;
 }
 
 .g__blog-container_groupA {

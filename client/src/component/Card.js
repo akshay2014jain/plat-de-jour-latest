@@ -32,7 +32,7 @@ export class Card extends Component{
         const requestOptions = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ image: image})
+          body: JSON.stringify({ image: image}),
         };
 
         fetch("/predict", requestOptions)
@@ -40,6 +40,7 @@ export class Card extends Component{
           .then(function(jsonString){
             that.setState({loading: false})
             let confidence_val = (jsonString.body.confidence * 100).toFixed(2);
+            console.log(confidence_val)
             that.props.setState({image: jsonString.body.category, mealDb_image: jsonString.body.meal, confidence: confidence_val, activeNow: 'knowFood', knowButton: false});
           })
       }

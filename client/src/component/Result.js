@@ -85,7 +85,7 @@ export default class Result extends Component{
           <>
             <h3>Prediction: </h3> 
             <h3>Food Item : {this.state.foodImage}</h3>
-            <h3>Confidence: <Progress percent={this.state.confidence} status={this.state.confidence < 90 ? "error" : "success"} /></h3>
+            <h3>Confidence: <Progress  percent={this.state.confidence} status={this.state.confidence < 90 ? "error" : "success"} /></h3>
           </>
         }
       </div>)
