@@ -10,6 +10,7 @@ import Food from '../images/food.jpeg';
 import Working from '../images/deep_learning.gif';
 import Result from '../images/illustration.png';
 import Results from '../images/result.png';
+import QR from '../images/qr.png';
 import { HashLink as Link } from 'react-router-hash-link';
 
 export default class AImodel extends Component{
@@ -66,12 +67,15 @@ export default class AImodel extends Component{
                 {/* <img  src= {Confusion_Matrix} alt="confusion_matrix"/> */}
             </div>
             <div id="results" className="result__ai">
-                <h2 >Results</h2>
+                <h2 >Accuracy</h2>
                 <p> In around 20 epochs, the accuracy was around 97%</p>
                 <div className="result__ai__img">
                 <img  src= {Results} alt="results"/>
+                <div className="result__ai__img__2">
+                <img  src= {QR} alt="qrcode"/>
+                <a href = "https://colab.research.google.com/drive/1qsglV5DVrwAkz-RhbTJ8ggkCb3K_tpjM?usp=sharing"> <p><u>Check out the code</u></p> </a>
                 </div>
-                
+                </div>
             </div>
             </div>
             </div>    

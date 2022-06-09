@@ -5,6 +5,7 @@
     align-items: center;
     background: var(--color-footer);
     padding: 0rem 1rem 0rem 0rem;
+    padding-top: 2rem;
 }
 
 .g__footer-heading {
