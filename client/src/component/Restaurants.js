@@ -20,10 +20,10 @@ export class Restaurants extends Component{
       <div id="blog">
         <div className="g__blog-heading">
           <h1>Restaurants near you : </h1>
-          {
+          {/* {
             restaurants !== null && 
               <Maps restaurants={restaurants} {...this.state}/>
-          }
+          } */}
         <div className="g__blog-container">
         {
         restaurants !== null && 
