@@ -37,7 +37,7 @@ export default class AboutUs extends Component{
                     <div className='temp'>
                         <div>
                             <div className="card">
-                            <img className='img' src={Akshay} alt="Jane" />
+                            <img className='img' src={Akshay} alt="Akshay" />
                             <div className="container">
                                 <h2 className='gradient__text__aboutus'>Akshay Jain</h2>
                                 <p  className="titlex">Full Stack Engineer</p>
@@ -53,7 +53,7 @@ export default class AboutUs extends Component{
 
                         <div>
                             <div className="card">
-                            <img className='img' src={Anish} alt="Jane" />
+                            <img className='img' src={Anish} alt="Anish" />
                             <div className="container">
                                 <h2 className='gradient__text__aboutus'>Anish Punamiya</h2>
                                 <p className="titlex">Backend Developer</p>
@@ -68,7 +68,7 @@ export default class AboutUs extends Component{
 
                         <div >
                             <div className="card">
-                            <img className='img' src={Sahil} alt="Jane" />
+                            <img className='img' src={Sahil} alt="Sahil" />
                             <div className="container">
                                 <h2 className='gradient__text__aboutus'>Sahil Jain</h2>
                                 <p className="titlex">ML Engineer</p>
@@ -83,7 +83,7 @@ export default class AboutUs extends Component{
                         
                         <div>
                             <div className="card">
-                            <img className='img' src={Viraj} alt="Jane" />
+                            <img className='img' src={Viraj} alt="Viraj" />
                             <div className="container">
                                 <h2 className='gradient__text__aboutus'>Viraj Shah</h2>
                                 <p className="titlex">Cloud Engineer</p>

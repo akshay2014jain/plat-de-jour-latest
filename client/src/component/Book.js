@@ -209,6 +209,69 @@ export class Book extends Component{
                   <th>{recipedata.Measure11}</th>
                 </tr>
                 }
+                { recipedata.Ingredient12.trim() === "" ? <></>
+                :
+                <tr>
+                  <th> {recipedata.Ingredient12} </th>
+                  <th>{recipedata.Measure12}</th>
+                </tr>
+                }
+                { recipedata.Ingredient13.trim() === "" ? <></>
+                :
+                <tr>
+                  <th> {recipedata.Ingredient13} </th>
+                  <th>{recipedata.Measure13}</th>
+                </tr>
+                }
+                { recipedata.Ingredient14.trim() === "" ? <></>
+                :
+                <tr>
+                  <th> {recipedata.Ingredient14} </th>
+                  <th>{recipedata.Measure14}</th>
+                </tr>
+                }
+                { recipedata.Ingredient15.trim() === "" ? <></>
+                :
+                <tr>
+                  <th> {recipedata.Ingredient15} </th>
+                  <th>{recipedata.Measure15}</th>
+                </tr>
+                }
+                { recipedata.Ingredient16.trim() === "" ? <></>
+                :
+                <tr>
+                  <th> {recipedata.Ingredient16} </th>
+                  <th>{recipedata.Measure16}</th>
+                </tr>
+                }
+                { recipedata.Ingredient17.trim() === "" ? <></>
+                :
+                <tr>
+                  <th> {recipedata.Ingredient17} </th>
+                  <th>{recipedata.Measure17}</th>
+                </tr>
+                }
+                { recipedata.Ingredient18.trim() === "" ? <></>
+                :
+                <tr>
+                  <th> {recipedata.Ingredient18} </th>
+                  <th>{recipedata.Measure18}</th>
+                </tr>
+                }
+                { recipedata.Ingredient19.trim() === "" ? <></>
+                :
+                <tr>
+                  <th> {recipedata.Ingredient19} </th>
+                  <th>{recipedata.Measure19}</th>
+                </tr>
+                }
+                { recipedata.Ingredient20.trim() === "" ? <></>
+                :
+                <tr>
+                  <th> {recipedata.Ingredient20} </th>
+                  <th>{recipedata.Measure20}</th>
+                </tr>
+                }
               </tbody>
             </table>
           )
