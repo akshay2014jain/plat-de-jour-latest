@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Article from './Article';
-import Maps from './Maps';
 import '../css/restaurants.css';
 
 export class Restaurants extends Component{
