@@ -69,24 +69,42 @@ export default class Result extends Component{
   render(){
     return(
       <>
-      
-      {!this.state.showBook && (<div className="result__cta" id="results">
-      {/* {!this.state.showBook && (<div className="result__cta-content">
-        {
-          this.state.confidence < 90 ? 
-          <><h3 >You seemed to have uploaded an incorrect image.</h3><h4> Our Model predicted it to be - {this.state.foodImage} with Confidence Score - {this.state.confidence} %</h4>    </>
-          :
-          <><h3>Our AI Model informed us, It's our favorite dish - {this.state.foodImage}</h3><h4> We are  {this.state.confidence} % sure!</h4>  </>
-        }
-      </div>)} */}
+      <div className="result__main" id="results">
+        <div className='why' >
+        <h2><i>Explore The Good Food Language</i> </h2>
+        </div>
+        
+      {!this.state.showBook && (<div className="result__cta">
       {
         !this.state.showBook && (<div className="result__cta-content">
         {
-          <>
-            <h3>Prediction: </h3> 
+          <div className="result__cta-content_section1">
+          <h1>Prediction</h1> 
+          <div className="result__cta-content_section2">
             <h3>Food Item : {this.state.foodImage}</h3>
-            <h3>Confidence: <Progress  percent={this.state.confidence} status={this.state.confidence < 90 ? "error" : "success"} /></h3>
-          </>
+            <br/>
+            <h3>Confidence Level </h3><br/>
+            <Progress theme={
+            {
+              error: {
+                symbol: '😱'+this.state.confidence + '%',
+                trailColor: 'white',
+                color: 'red'
+              },
+              active: {
+                symbol: '🤗' + this.state.confidence + '%',
+                trailColor: 'white',
+                color: 'orange'
+              },
+              success: {
+                symbol: '🤗'+ this.state.confidence + '%',
+                trailColor: 'white',
+                color: 'green'
+              }
+            }
+          }  percent={this.state.confidence} status={this.state.confidence < 90 ? "error" : "success"} />
+          </div >
+          </div>
         }
       </div>)
       }
@@ -96,6 +114,7 @@ export default class Result extends Component{
       </div>)}</div>)}
       <div>
       {this.state.showBook && <Book setState={state => this.setState(state)} {...this.state}/>}
+      </div>
       </div>
       </>
     );

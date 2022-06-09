@@ -47,6 +47,10 @@
     grid-gap: 1rem;
 }
 
+.rest_blog{
+    scroll-margin-top: 6.7rem;
+}
+
 @media screen and (max-width: 990px) {
     .g__blog-container {
         flex-direction: column-reverse;

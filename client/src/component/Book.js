@@ -101,7 +101,7 @@ export class Book extends Component{
       <div className='book_css' id='results'>
         <div className='references'>
           <div className='awesome_links'>
-          <a href="/#blog"><FontAwesomeIcon className="youtube" icon = {faBowlFood}></FontAwesomeIcon></a>
+          <a href="/#blog"><FontAwesomeIcon className="rest" icon = {faBowlFood}></FontAwesomeIcon></a>
           <a href={recipedata.youtube} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="youtube" icon = {faYoutube}></FontAwesomeIcon></a>
           <a href={recipedata.source} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className ="google" icon = {faGoogle}></FontAwesomeIcon></a>
           </div>    

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 import '../css/contactus.css'
 import Footer from './Footer';
 import styled from "styled-components";
@@ -114,7 +114,7 @@ const ContactUs = () => {
                 <div >
                 <h1 className="gradient__text">Feedback Form</h1>
                 <br/>
-                        <p className="gradient__text">Thank you for visiting Plat de Joûr! We would love to hear about your experience
+                        <p>Thank you for visiting Plat de Joûr! We would love to hear about your experience
 simply fill out this form and hit complete. Thank you for your feedback!.</p>
                     <br/>
                     <div className="contact-section">

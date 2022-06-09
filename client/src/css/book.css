@@ -68,10 +68,17 @@
   align-items: right;
 
 }
+.rest{
+  font-size:48px;
+  color: lightslategray;
+  padding: 0rem 1rem 1rem;
+  cursor: pointer;
+  align-items: right;
+}
 .google{
   font-size:48px;
   color:green;
-  padding: 0rem 0rem 1rem;
+  padding: 0rem 1rem 1rem;
   cursor: pointer;
   align-items: right;
 }

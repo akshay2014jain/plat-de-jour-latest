@@ -43,7 +43,7 @@ app.post('/getRestaurants', (req, res) => {
     })
 });
 
-app.post('/predict',timeout('10s'), (req, res) => {
+app.post('/predict',timeout('20s'), (req, res) => {
     jsonData = req.body
     request.post({url: 'https://lit-fjord-92060.herokuapp.com/predict', json:jsonData}, function (error, response) {
         if (!error && response.statusCode == 200) {

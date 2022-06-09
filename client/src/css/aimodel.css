@@ -196,10 +196,29 @@
 }
 .result__ai__img{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    padding-bottom: 2rem;
 }
 .result__ai__img img{
     width: 400px;
     height: 400px;
+    margin-right: 2rem;
+    
+}
+.result__ai__img__2{
+    padding-top: 17rem;
+    padding-left: 20rem;
+    align-items: center;
+    text-align: center;
+}
+.result__ai__img__2 img{
+    padding-top: 0rem;
+    width: 100px;
+    height: 100px;
+}
+
+.result__ai__img__2 u{
+    color: blue;
+    text-align: center;
 }
