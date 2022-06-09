@@ -19,7 +19,9 @@ export default class Result extends Component{
       confidence: this.props.confidence,
       recipe: '',
       restaurants: null,
-      onLoad: false
+      onLoad: false,
+      lat: this.props.lat,
+      lng: this.props.lon
     }
   }
 
@@ -46,7 +48,6 @@ export default class Result extends Component{
   getRestaurants = (e) => {
 
     const that = this
-    console.log(that.props)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

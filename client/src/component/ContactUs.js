@@ -42,22 +42,21 @@ const ContactUs = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if(email.trim() !== "")
-            sendFeedback({to_name: name, reply_to: email});
+            sendFeedback({to_name: name, to_email: email});
         else
             alert("Kindly fill in the relevant details before submitting the feedback!");
     }
     
     const sendFeedback = (variables) => {
-        alert("Thank you for your valuable feedback! We will get in touch");
-        // emailjs.send(
-        //     'service_v7zu0xx',
-        //     'template_4ozdfr4',
-        //     variables,
-        //     'uwzBVhypyZE_VPVYy'
-        //     ).then(res => {
-        //         alert("Thank you for your valuable feedback! We will get in touch");
-        //     })
-        //     .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+        emailjs.send(
+            'service_rp84qs7',
+            'template_616r4on',
+            variables,
+            'aODHx0Vsc_W6hWLf0'
+            ).then(res => {
+                alert("Thank you for your valuable feedback! We will get in touch");
+            })
+            .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
     };
 
     const StarRating1 = () => {

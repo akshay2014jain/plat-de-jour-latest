@@ -37,7 +37,9 @@ export class Book extends Component{
   constructor(props){
     super(props)
     this.state = {
-      instructions: true
+      instructions: true,
+      lat: this.props.lat,
+      lng: this.props.lng
     }
   }
 
@@ -223,7 +225,7 @@ export class Book extends Component{
           )
         }
         <hr/>
-      <Restaurants restaurants={this.props.restaurants}/>
+      <Restaurants restaurants={this.props.restaurants} {...this.state}/>
       <Link smooth to="/#start"><FontAwesomeIcon className="backbutton" icon = {faArrowLeft} onClick={() => this.goBack()}></FontAwesomeIcon></Link>
       </div>
     )
