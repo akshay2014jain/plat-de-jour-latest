@@ -1,24 +1,46 @@
-import React from 'react';
-import './Navbar.css';
-import './Navbar.css';
+import React, {Component} from 'react';
+import '../css/navbar.css';
 import Logo from '../images/logo.png'
+import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
+import Home from './Home';
+import AboutUs from './AboutUs';
+import ContactUs from './ContactUs';
+import AImodel from './Aimodel';
 
-const Navbar = () => {
+export class Navbar extends Component{
+
+  constructor(props){
+    super(props)
+    this.state = {
+      toggleMenu: true
+    }
+  }
+
+  render(){
     return (
+      <Router>
         <div className="g__navbar">
-      <div className="g__navbar-links">
-        <div className="g__navbar-links_logo">
-          <a href="#home"><img src={Logo} alt="logo"/></a>
+          <div className="g__navbar-links_logo">
+            <Link smooth to="/#home"><img src={Logo} alt="logo"/></Link>
+          </div>
+          <div className="g__navbar-links_container">
+            <p><Link smooth to="/#home">Home</Link></p>
+            <p><Link smooth to="/#hiw">How It Works</Link></p>
+            <p><Link smooth to="/#start">Try Now</Link></p>
+            <p><Link smooth to="/about#preview">About the Team</Link></p>
+            <p><Link smooth to="/aimodel#background_ai">AI Model</Link></p>
+            <p><Link smooth to="/contact#contactus">Contact Us</Link></p> 
+          </div>
         </div>
-        <div className="g__navbar-links_container">
-          <p><a href="#home">Home</a></p>
-          <p><a href="#hiw">How it works</a></p>
-          <p><a href="#start">Try Now</a></p>
-          <p><a href="#att">About the Team</a></p>
-          <p><a href="#contact">Contact Us</a></p>
-        </div>
-      </div>
-        </div>
+        <Routes>
+            <Route exact path='/' element={< Home />}></Route>
+            <Route exact path='/about' element={< AboutUs />}></Route>
+            <Route exact path='/contact' element={< ContactUs />}></Route>
+            <Route exact path='/aimodel' element={< AImodel />}></Route>
+        </Routes>
+      </Router>
     )
+  }
 }
 export default Navbar;

@@ -1,12 +1,12 @@
 import React , {Component} from 'react'
-import './card.css';
+import '../css/card.css';
 import { css } from "@emotion/react";
 import startImage from '../images/try.jpeg';
 import PacmanLoader from "react-spinners/PacmanLoader";
 
 const override = css`
-  display: block;
-  margin: 1 auto;
+  display: flex;
+  margin: 5rem 8rem 0rem 2rem;
   border-color: red;
 `;
 
@@ -26,20 +26,28 @@ export class Card extends Component{
     reader.onload = () => {
       console.log('Loading Result')
       if(reader.readyState === 2){
+        that.props.setState({knowButton: true});
         let image = reader.result.split(",")[1]
         that.setState({profileImg: reader.result, loading: true})
         const requestOptions = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ image: image})
+          body: JSON.stringify({ image: image}),
         };
+
+        var timeout = setTimeout(function() {
+          alert('Failed to Load Data for this Image');
+          window.location.reload();
+        }, 15000);
 
         fetch("/predict", requestOptions)
           .then(response => response.json())
           .then(function(jsonString){
+            clearTimeout(timeout);
             that.setState({loading: false})
-            that.props.setState({image: jsonString.body.category, activeNow: 'knowFood'});
-            console.log(jsonString);
+            let confidence_val = (jsonString.body.confidence * 100).toFixed(2);
+            console.log(confidence_val)
+            that.props.setState({image: jsonString.body.category, mealDb_image: jsonString.body.meal, confidence: confidence_val, activeNow: 'knowFood', knowButton: false});
           })
       }
     }
@@ -52,8 +60,8 @@ export class Card extends Component{
       <div className="cardheader" id="start">
       <div className="cardheader-content">
       <h1 className="gradient__text">What's Cooking?</h1>
-        <p>Upload the picture </p>
-        <p>& let us find the perfect recipe for you</p>
+        <p>Snap an image &</p>
+        <p>We will find the ideal recipe for you !</p>
         </div>
       <div className="cardheader-content__people">
         <img src= {profileImg} alt="profile"/>
@@ -65,11 +73,11 @@ export class Card extends Component{
             <>
               <label htmlFor="input" className="image-upload">
                 <i className="material-icons"> add_photo_alternate </i>
-                  Choose your food photo 
+                  Select food image 
               </label>
             </>
             :
-            <PacmanLoader color={'#FF4820'} loading={this.state.loading} css={override} size={20} />
+            <PacmanLoader color={'#AE67FA'} loading={this.state.loading} css={override} size={25} />
         }        
       </div>
       <div>

@@ -1,0 +1,128 @@
+
+
+.g__blog-container_article {
+    width: 18rem;
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, #d3cccc 65%, rgba(252,252,252,1) 100%);
+}
+
+
+.g__blog-container_article-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    width: 18rem;
+    height: 18rem;
+}
+.order_online{
+    justify-items: left;
+    align-items: flex-end;
+    text-align: left;
+    color: darkblue;
+    cursor: pointer;
+    padding: 1.5rem;
+}
+.g__blog-container_article-content p {
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 35px;
+    color: black;
+}
+
+.g__blog-container_article-content h3 {
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 30.30px;
+    color: black;
+
+    cursor: pointer;
+}
+
+.g__blog-container_article-content p:last-child {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 550px) {
+    .g__blog-container_article-content h3 {
+        font-size: 18px;
+        line-height: 25p;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media screen and (max-width: 1050px) {
+
+    .g__blog-container_article {
+        display: flex;
+        flex-direction: column;
+        max-width: 30%;
+    }
+
+    .g__header {
+        flex-direction: column;
+    }
+
+    .g__header-content {
+        margin: 0 0 3rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .g__blog-container_article h1 {
+        font-size: 48px;
+        line-height: 60px;
+    }
+
+    .g__blog-container_article p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .g__blog-container_article {
+        display: flex;
+        flex-direction: column;
+        max-width: 30%;
+    }
+
+    .g__blog-container_article p {
+        display: flex;
+        margin: 0;
+    }
+
+    .g__blog-container_article input,
+    .g__blog-container_article button {
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 30%;
+    }
+}
+@media screen and (max-width: 490px) {
+    .g__blog-container_article {
+        display: flex;
+        flex-direction: column;
+        max-width: 20%;
+    }
+
+    .g__blog-container_article h1 {
+        font-size: 36px;
+        line-height: 48px;
+    }
+    .g__blog-container_article p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .g__blog-container_article input,
+    .g__blog-container_article button {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}

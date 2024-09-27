@@ -1,3 +1,18 @@
+.book{
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+  background: var(--gradient-bar)
+}
+.hello{
+  text-align: center ;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 62px;
+  line-height: 75px;
+  color: whitesmoke;
+}
+
 .bookheader {
   display: flex;
   flex-direction: column;
@@ -5,46 +20,120 @@
   text-align: center;
 }
 
+.gradient__text_copy{
+    color: black;
+    background-clip: text;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.bookheader_missing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+
 .bookheader-content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  padding: 0rem 0.5rem;
+  text-align: left;
+
+}
+.bookheader-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.bookheader-content-table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   text-align: center;
 }
 
+.youtube{
+  font-size:48px;
+  color:red;
+  padding: 0rem 1rem 1rem;
+  cursor: pointer;
+  align-items: right;
+
+}
+.rest{
+  font-size:48px;
+  color: lightslategray;
+  padding: 0rem 1rem 1rem;
+  cursor: pointer;
+  align-items: right;
+}
+.google{
+  font-size:48px;
+  color:green;
+  padding: 0rem 1rem 1rem;
+  cursor: pointer;
+  align-items: right;
+}
+
+.tablex{
+  color: black;
+  font-family:var(--font-family) ;
+}
+
 table {
-  border: 2px solid forestgreen;
-  width: 1250px;
-  height: 200px;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  color: #fff;
- 
-}
-  
-th {
-  border-bottom: 1px solid black;
-}
-  
-td {
+  align-items: center;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  margin-left: 4rem;
+}
+
+.references{
+  padding: 1rem 1rem 0 0;
+}
+
+.awesome_links{
+  float: right;
+}
+
+.backbutton{
+  font-size:48px;
+  color:black;
+  padding: 0rem 1rem 1rem;
+  cursor: pointer;
+}
+
+th{
+  border: 1px solid black;
+}
+
+hr{
+  margin: 1.5rem 0 1.5rem 0;
+  border-top: 0.5px solid #c0bdbd;
 }
 
 .image-upload2{
-  margin:1rem;
+  margin-right:rem;
   display: flex;
   cursor: pointer;
   text-decoration-color: #FF4820;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #FF4820;
   width: 300px;
   height: 300px;
-  overflow: hidden;
-  border-radius: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .bookheader-content h1 {
@@ -54,29 +143,31 @@ td {
   font-size: 62px;
   line-height: 75px;
   letter-spacing: -0.04em;
-  
 }
 
 .bookheader-content h2 {
-  justify-content: center;
-  text-align: center;
+  justify-content: left;
+  text-align: left;
   font-family: var(--font-family);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 50px;
   line-height: 75px;
   letter-spacing: -0.04em;
-  padding: 5% 5%;
 }
 
 .bookheader-content p {
   font-family: var(--font-family);
-  font-weight: 400;
+  width: 70%;
+  height: 50%;
+  font-weight: 600;
   font-size: 20px;
   line-height: 28px;
-  color: #fff;
+  color: black;
   display: flex;
-  margin-top: 1.5rem;
-  margin-right: 1.5rem;
+  padding: auto;
+  align-items: center;
+  padding: 1rem 3rem 3rem 1rem;
+  margin-bottom: 5rem;
 }
 
 .bookheader-content__input {
@@ -146,6 +237,7 @@ td {
   color: #fff;
   text-align: center;
   display: flex;
+  padding: 2rem 2rem 2rem 2rem;
 }
 
 .bookheader-image {
@@ -162,13 +254,13 @@ td {
   height: 20%;
 }
 
+.book_css{
+  background: var(--gradient-bar);
+}
+
 @media screen and (max-width: 1050px) {
   .bookheader {
       flex-direction: column;
-  }
-
-  .bookheader-content {
-      margin: 0 0 3rem;
   }
 }
 
@@ -181,6 +273,7 @@ td {
   .bookheader-content p {
       font-size: 16px;
       line-height: 24px;
+      color: black;
   }
   
   .bookheader-content__people {
@@ -213,144 +306,5 @@ td {
       font-size: 12px;
       line-height: 16px;
   }
-}
-/* *{
-    margin: 0;
-    padding: 0;
-  }
-
-  .page{
-    height: 65vh;
-    background-color: white;
-    display: flex ;
-    align-items: center ;
-    justify-content: center ;
-    font-family: cursive;
-  }
   
-  .container{
-  height: 600px ;
-  width: 600px ;
-  
-  }
-  
-  .heading {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 1rem;
-    font-weight: bold;
-  }
-  
-  .img-holder{
-    margin:auto;
-    width: 300px;
-    height: 300px;
-    border: 3px solid black;
-    border-radius: 5px;
-    margin-top: 1rem;
-  }
-  .img{
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-  }bookheader-content__people
-  
-  #input[type="file"]{
-    display: None;
-  }
-  
-  .label{
-    width: 100% ;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    font-family: cursive;
-  }
-  
-  .buttontemp{
-    text-align: center;
-  }
-  
-  .image-upload{
-    margin:auto;
-    width: 250px;
-    height: 40px;
-    background-color: black;
-    color: white;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-  } */
-
-
-
-/* *{
-  margin: 0;
-  padding: 0;
 }
-.page2{
-  height: 65vh;
-  background-color: white;
-  display: inline-table ;
-  align-items: center ;
-  justify-content: center ;
-  font-family:sans-serif;
-  align-content: center;
-}
-
-.container2{
-height: 600px ;
-width: 1410px ;
-border-radius: 10px;
-background-color: white;
-text-align: center;
-align-content: center;
-}
-
-.heading {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-.img-holder{
-  margin:auto;
-  width: 300px;
-  height: 300px;
-  border: 3px solid black;
-  border-radius: 5px;
-  margin-top: 1rem;
-}
-.img{
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-}
-
-#input[type="file"]{
-  display: None;
-}
-
-.label{
-  width: 100% ;
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  font-family: cursive;
-}
-
-.buttontemp{
-  text-align: center;
-}
-
-.image-upload{
-  margin:auto;
-  width: 250px;
-  height: 40px;
-  background-color: black;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-} */

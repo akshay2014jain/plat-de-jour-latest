@@ -5,6 +5,7 @@
     align-items: center;
     background: var(--color-footer);
     padding: 0rem 1rem 0rem 0rem;
+    padding-top: 2rem;
 }
 
 .g__footer-heading {
@@ -53,12 +54,18 @@
 
 .g__footer-links div {
     width: 250px;
-    margin: 1rem;
+}
+
+.uci_logo{
+    height: 2rem;
+    width: 10rem;
+    padding-right: 1rem;
 }
 
 .g__footer-links_logo {
     display: flex;
     flex-direction: column;
+    margin: -2rem 0rem 0rem 1rem;   
 }
 
 .g__footer-links_logo img {
@@ -100,12 +107,16 @@
     margin-top: 2rem;
     text-align: center;
     width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    padding-left: 40rem;
 }
 
 .g__footer-copyright p {
     font-size: 12px;
     font-family: var(--font-family);
-    line-height: 15px;
+    line-height: 30px;
     color: #fff;
 }
 

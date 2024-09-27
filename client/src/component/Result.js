@@ -1,24 +1,33 @@
 import React from 'react';
 import {Component} from "react";
-import './result.css';
+import '../css/result.css';
 import Book from './Book';
+import { HashLink as Link } from 'react-router-hash-link';
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 
 export default class Result extends Component{
+
+  
   
   constructor(props){
     super(props)
     this.state = {
       showBook: false,
       foodImage: this.props.image,
+      mealDb_image: this.props.mealDb_image,
+      confidence: this.props.confidence,
       recipe: '',
       restaurants: null,
-      onLoad: false
+      onLoad: false,
+      lat: this.props.lat,
+      lng: this.props.lon
     }
   }
 
   componentDidMount(){
-      this.getRecipe();
-      this.getRestaurants();
+    this.getRecipe();
+    this.getRestaurants();
   }
 
   getRecipe = (e) => {
@@ -26,40 +35,31 @@ export default class Result extends Component{
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({s: that.state.foodImage}),
+      body: JSON.stringify({s: that.state.mealDb_image}),
     };
-    fetch("/getMealDb", requestOptions)
+    setTimeout(() => fetch("/getMealDb", requestOptions)
       .then(response => response.json())
       .then(function(jsonString){
         let recipe = JSON.parse(jsonString.body)
         that.setState({recipe: recipe.meals[0]})
-      })
+      }), 250);
   };
 
   getRestaurants = (e) => {
 
     const that = this
-    let lat = ''
-    let lon = ''
-
-    navigator.geolocation.getCurrentPosition(function(position) {
-      lat = position.coords.latitude
-      lon = position.coords.longitude
-    });
-
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({latitude: lat, longitude: lon, foodImage: that.state.foodImage}),
+      body: JSON.stringify({latitude: this.props.lat, longitude: this.props.lon, foodImage: that.state.foodImage}),
     };
 
-    fetch("/getRestaurants", requestOptions)
+    setTimeout(() => fetch("/getRestaurants", requestOptions)
       .then(response => response.json())
       .then(function(jsonString){
         let json = JSON.parse(jsonString.body)
         that.setState({restaurants: json.results})
-      })
-
+      }), 500);
   };
 
   setshowBook(showParam){
@@ -68,17 +68,55 @@ export default class Result extends Component{
 
   render(){
     return(
-      <div className="result__cta">
-
-      {!this.state.showBook && (<div className="result__cta-content">
-        <p>Our AI Model told us </p>
-        <h3>It's our favorite dish {this.state.foodImage}.</h3>
-      </div>)}
+      <>
+      <div className="result__main" id="results">
+        <div className='why' >
+        <h2><i>Explore The Good Food Language</i> </h2>
+        </div>
+        
+      {!this.state.showBook && (<div className="result__cta">
+      {
+        !this.state.showBook && (<div className="result__cta-content">
+        {
+          <div className="result__cta-content_section1">
+          <h1>Prediction</h1> 
+          <div className="result__cta-content_section2">
+            <h3>Food Item : {this.state.foodImage}</h3>
+            <br/>
+            <h3>Confidence Level </h3><br/>
+            <Progress theme={
+            {
+              error: {
+                symbol: '😱'+this.state.confidence + '%',
+                trailColor: 'white',
+                color: 'red'
+              },
+              active: {
+                symbol: '🤗' + this.state.confidence + '%',
+                trailColor: 'white',
+                color: 'orange'
+              },
+              success: {
+                symbol: '🤗'+ this.state.confidence + '%',
+                trailColor: 'white',
+                color: 'green'
+              }
+            }
+          }  percent={this.state.confidence} status={this.state.confidence < 90 ? "error" : "success"} />
+          </div >
+          </div>
+        }
+      </div>)
+      }
+      
       {!this.state.showBook && (<div className="result__cta-btn">
-        <button onClick = {() => this.setshowBook(true)} type="button">Get Recipe</button>
-      </div>)}
-      {this.state.showBook && <Book {...this.state}/>}
+        <Link smooth to="/#results"><button onClick = {() => this.setshowBook(true)} className={this.state.confidence < 90 ? 'disabledRecipe' : 'enabledRecipe'} disabled={this.state.confidence < 90 ? true : false} type="button">Get Recipe</button></Link>
+      </div>)}</div>)}
+      <div>
+      {this.state.showBook && <Book setState={state => this.setState(state)} {...this.state}/>}
       </div>
+      </div>
+      </>
     );
   }
 }

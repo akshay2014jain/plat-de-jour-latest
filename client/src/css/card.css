@@ -1,7 +1,7 @@
 .cardheader {
   display: flex;
   flex-direction: row;
-  padding: 0rem 0rem 3rem 0rem;
+  padding: 5rem 1rem 0rem 1rem;
 }
 .cardheader-content {
   display: flex;
@@ -33,11 +33,11 @@
   align-items: center;
   cursor: pointer;
   font-family: var(--font-family);
-  background-color: #FF4820;
+  background-color: #AE67FA ;
   color: white;
   border-radius: 5px;
-  padding: 3px 6px;
-  margin: 10px 0px;
+  padding: 6px 3px 0px 3px;
+  margin: 5px 0px;
   overflow: hidden;
   border-radius: 1rem;
 }
